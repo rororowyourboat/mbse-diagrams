@@ -59,3 +59,7 @@ The JSON Schema documents structure. The Python validator additionally checks re
 ## Optional browser checks
 
 With an existing Playwright installation and Chromium, run `node scripts/check_browser.cjs`. Set `PLAYWRIGHT_MODULE` to an existing module path if it is outside this repository. The checker does not install dependencies. It checks both local HTML examples; it does not exercise the draw.io editor.
+
+## Optional automatic layout
+
+Use the [diagramatic integration](diagramatic-integration.md) for grid layout backed by the older toolkit. No dependency installation is required for its supported grid backend.

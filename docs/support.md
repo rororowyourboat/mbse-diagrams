@@ -10,6 +10,7 @@ Version 0.1 supports structural views only. Support means the explicit operation
 | SysML v2 text | Bounded subset | No model write-back | One simple named package; part/item definitions; single simple specialization; typed part/item usage bodies |
 | UML 2.5.1 | Class-view JSON profile | SVG, HTML, draw.io | Classes, text compartments, specialization, composition, association and dependency; no XMI or UML text parser |
 | draw.io | Our exports | Native XML and shape library | Single page; compressed editor saves supported; native editable cells and labels; changed semantic endpoints/markers rejected |
+| diagramatic | Explicit source checkout | Positioned JSON | Pinned grid layout; node-overlap check; engineering fields preserved |
 | Mermaid | No | Explanatory flowchart | Labels/endpoints retained, relationship kind rendered as text; model refs, formal glyphs, compartments and layout lost |
 
 Conversion commands require a receipt file. Draw.io ignores editor-only styling on import and reports that loss. Moved/resized nodes normalize edge endpoints relative to their previous bounds; interior waypoints remain explicit. This is a bounded adapter, not arbitrary draw.io interchange. New cells need explicit model mapping and are rejected in this version.

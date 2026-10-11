@@ -1,0 +1,43 @@
+{
+  "engine": {
+    "repository": "https://github.com/rororowyourboat/diagramatic",
+    "commit": "baba9c95ea4b2783ae77d205bd958745d6eb9b83",
+    "trackedChanges": false,
+    "sourceHashes": {
+      "diagramatic/layout/grid.py": "e75e232608db3e767d35a8da3058d7f1857f31c8c227d1aca588cb6d57e6a1dc",
+      "diagramatic/core/spatial.py": "c4836370af3fca7df82a0b88e407a1e08fd5acb8d9d5ad0fe98c083165684e30"
+    }
+  },
+  "preserved": [
+    "node/edge IDs",
+    "model references",
+    "symbols",
+    "relationship kinds",
+    "endpoints",
+    "labels",
+    "compartments",
+    "node sizes"
+  ],
+  "normalized": [
+    "node positions from diagramatic grid",
+    "edge endpoints and orthogonal routing from MBSE adapter"
+  ],
+  "unsupported": [],
+  "lost": [
+    "previous layout and routing"
+  ],
+  "checks": {
+    "nodeOverlap": "passed",
+    "edgeNodeCrossings": "not checked",
+    "textOverflow": "not checked"
+  },
+  "direction": "TB",
+  "layerAssignments": {
+    "Participant": "types",
+    "Sender": "participants",
+    "Receiver": "participants",
+    "Channel": "transport",
+    "Exchange": "context"
+  },
+  "scope": "layout only; not notation or model conformance"
+}

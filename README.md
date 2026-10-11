@@ -34,7 +34,7 @@ Try [the communication viewer](examples/communication/index.html) or [the UML vi
 
 Run `python3 scripts/check_docs.py`, `python3 -m unittest discover -s tests -v`, and `git diff --check`. GitHub Actions also checks reproducible example exports.
 
-See [contribution guidance](CONTRIBUTING.md). The initial CLI uses Python’s standard library. Future dependencies require a concrete need.
+See [contribution guidance](CONTRIBUTING.md). The initial CLI uses Python’s standard library. An [optional diagramatic layout bridge](docs/diagramatic-integration.md) reuses the older toolkit from a trusted source checkout. Future dependencies require a concrete need.
 
 ## License and provenance
 

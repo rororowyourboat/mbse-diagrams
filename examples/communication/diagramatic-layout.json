@@ -1,0 +1,164 @@
+{
+  "formatVersion": "0.1",
+  "id": "communication",
+  "title": "Communication \u2014 structural definition view",
+  "notation": "sysml-2.0-structural",
+  "sources": [
+    {
+      "id": "model",
+      "uri": "communication.sysml",
+      "revision": "sha256:40e4c28fdb1864c3bd7decd57ed241f4d3bba4b868a6513096320ceb9001af5d"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "Participant",
+      "label": "Participant",
+      "symbol": "sysml.part-definition",
+      "bounds": [
+        40,
+        40,
+        240,
+        80
+      ],
+      "compartments": [],
+      "modelRef": {
+        "source": "model",
+        "element": "CommunicationExample::Participant"
+      }
+    },
+    {
+      "id": "Sender",
+      "label": "Sender",
+      "symbol": "sysml.part-definition",
+      "bounds": [
+        40,
+        200,
+        240,
+        80
+      ],
+      "compartments": [],
+      "modelRef": {
+        "source": "model",
+        "element": "CommunicationExample::Sender"
+      }
+    },
+    {
+      "id": "Receiver",
+      "label": "Receiver",
+      "symbol": "sysml.part-definition",
+      "bounds": [
+        330,
+        200,
+        240,
+        80
+      ],
+      "compartments": [],
+      "modelRef": {
+        "source": "model",
+        "element": "CommunicationExample::Receiver"
+      }
+    },
+    {
+      "id": "Channel",
+      "label": "Channel",
+      "symbol": "sysml.part-definition",
+      "bounds": [
+        40,
+        360,
+        240,
+        80
+      ],
+      "compartments": [],
+      "modelRef": {
+        "source": "model",
+        "element": "CommunicationExample::Channel"
+      }
+    },
+    {
+      "id": "Exchange",
+      "label": "Exchange",
+      "symbol": "sysml.part-definition",
+      "bounds": [
+        40,
+        520,
+        300,
+        180
+      ],
+      "compartments": [
+        {
+          "name": "parts",
+          "lines": [
+            "sender : Sender",
+            "channel : Channel",
+            "receiver : Receiver"
+          ]
+        }
+      ],
+      "modelRef": {
+        "source": "model",
+        "element": "CommunicationExample::Exchange"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "sender-specialization",
+      "label": "",
+      "kind": "specialization",
+      "source": "Sender",
+      "target": "Participant",
+      "points": [
+        [
+          160.0,
+          200
+        ],
+        [
+          160.0,
+          160.0
+        ],
+        [
+          160.0,
+          160.0
+        ],
+        [
+          160.0,
+          120
+        ]
+      ],
+      "modelRef": {
+        "source": "model",
+        "element": "CommunicationExample::Sender::specialization"
+      }
+    },
+    {
+      "id": "receiver-specialization",
+      "label": "",
+      "kind": "specialization",
+      "source": "Receiver",
+      "target": "Participant",
+      "points": [
+        [
+          450.0,
+          200
+        ],
+        [
+          450.0,
+          160.0
+        ],
+        [
+          160.0,
+          160.0
+        ],
+        [
+          160.0,
+          120
+        ]
+      ],
+      "modelRef": {
+        "source": "model",
+        "element": "CommunicationExample::Receiver::specialization"
+      }
+    }
+  ]
+}
