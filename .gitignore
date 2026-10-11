@@ -1,0 +1,12 @@
+# Local environments and caches
+.venv/
+__pycache__/
+*.py[cod]
+node_modules/
+.DS_Store
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+# Local render scratch files; published examples stay versioned
+/tmp/

@@ -28,8 +28,10 @@ See [design](docs/design.md), [interchange contract](docs/interchange.md), and [
 
 ## Development
 
-Documentation only at present. No dependencies, installation steps, executable commands, or passing implementation checks are claimed. Establish the implementation language and tooling when the first renderer is added.
+The renderer and adapters are not implemented yet. No production dependencies are required. Run `python3 scripts/check_docs.py` and `git diff --check` to check documentation locally. GitHub Actions runs the documentation checks on pushes and pull requests.
+
+See [contribution guidance](CONTRIBUTING.md). Establish implementation language and tooling when the first renderer is added.
 
 ## License and provenance
 
-No reuse license has been selected yet. Record origin and redistribution terms for every imported asset. Create original geometry from notation requirements rather than copying standards illustrations without permission.
+Original repository content is licensed under the [MIT License](LICENSE). Third-party material retains its own license. Record origin and redistribution terms for every imported asset. Create original geometry from notation requirements rather than copying standards illustrations without permission.
