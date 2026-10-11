@@ -14,7 +14,7 @@ Generate draw.io native shapes from the same notation definitions where practica
 
 Stable diagram identifiers differ from model identifiers. A model reference contains a source URI, source revision when available, and element identifier. Nodes may be repeated presentations of the same model element.
 
-Store semantic relationship type separately from routing and arrow geometry. Select glyphs through a versioned notation profile. Preserve nested ownership, ports, label placement and explicit waypoint geometry.
+Store semantic relationship type separately from routing and arrow geometry. Select glyphs through a versioned notation profile. Version 0.1 preserves explicit waypoint geometry and labels. Nested ownership, ports and independent label positioning are deferred.
 
 Use draw.io XML for editable editor exchange. SVG is a view export; embedded metadata can assist traceability but is not the canonical interchange file.
 
@@ -26,4 +26,4 @@ Use draw.io XML for editable editor exchange. SVG is a view export; embedded met
 
 ## Deferred
 
-General SysML parsing, model write-back, arbitrary SVG import, automatic layout, collaboration services, other editor adapters, and claims of full standards coverage.
+General SysML parsing beyond the strict implemented subset, model write-back, arbitrary SVG import, automatic layout, collaboration services, other editor adapters, and claims of full standards coverage.

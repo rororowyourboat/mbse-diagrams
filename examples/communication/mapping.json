@@ -1,0 +1,47 @@
+{
+  "source": "communication.sysml",
+  "sourceSha256": "40e4c28fdb1864c3bd7decd57ed241f4d3bba4b868a6513096320ceb9001af5d",
+  "status": "original small structural fixture; not an export of the full communication theory model",
+  "view": "all five definitions, both specializations, three typed part usages displayed as compartment lines",
+  "sourceDefinitionCount": 5,
+  "drawnNodeCount": 5,
+  "sourceSpecializationCount": 2,
+  "drawnEdgeCount": 2,
+  "mapping": {
+    "Participant": {
+      "source": "model",
+      "element": "CommunicationExample::Participant"
+    },
+    "Sender": {
+      "source": "model",
+      "element": "CommunicationExample::Sender"
+    },
+    "Receiver": {
+      "source": "model",
+      "element": "CommunicationExample::Receiver"
+    },
+    "Channel": {
+      "source": "model",
+      "element": "CommunicationExample::Channel"
+    },
+    "Exchange": {
+      "source": "model",
+      "element": "CommunicationExample::Exchange"
+    },
+    "sender-specialization": {
+      "source": "model",
+      "element": "CommunicationExample::Sender::specialization"
+    },
+    "receiver-specialization": {
+      "source": "model",
+      "element": "CommunicationExample::Receiver::specialization"
+    }
+  },
+  "compartmentMembers": [
+    "CommunicationExample::Exchange::sender",
+    "CommunicationExample::Exchange::channel",
+    "CommunicationExample::Exchange::receiver"
+  ],
+  "omitted": [],
+  "referenceIdentity": "textual qualified names, not engine UUIDs"
+}

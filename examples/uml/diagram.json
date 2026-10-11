@@ -1,0 +1,70 @@
+{
+  "formatVersion": "0.1",
+  "id": "uml-example",
+  "title": "UML class view \u2014 proposed messaging design",
+  "notation": "uml-2.5.1-class",
+  "sources": [],
+  "nodes": [
+    {
+      "id": "Publisher",
+      "label": "Publisher",
+      "symbol": "uml.class",
+      "bounds": [
+        40,
+        80,
+        260,
+        150
+      ],
+      "compartments": [
+        {
+          "name": "operations",
+          "lines": [
+            "publish(message : Message)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Message",
+      "label": "Message",
+      "symbol": "uml.class",
+      "bounds": [
+        440,
+        80,
+        240,
+        150
+      ],
+      "compartments": [
+        {
+          "name": "attributes",
+          "lines": [
+            "text : String"
+          ]
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "uses",
+      "label": "uses",
+      "kind": "dependency",
+      "source": "Publisher",
+      "target": "Message",
+      "points": [
+        [
+          300,
+          150
+        ],
+        [
+          370,
+          150
+        ],
+        [
+          440,
+          150
+        ]
+      ]
+    }
+  ]
+}

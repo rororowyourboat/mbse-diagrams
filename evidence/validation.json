@@ -1,0 +1,85 @@
+{
+  "date": "2026-10-11",
+  "python": "3.12.3",
+  "status": "partial implementation; editor validation pending",
+  "sourceAndOutputHashes": {
+    "mbse_diagrams/__init__.py": "e2eae3768f7368a2395fd0bec24538fc82a21bbb3a0d336cf39b73a5a9254742",
+    "mbse_diagrams/__main__.py": "21931490d07262358a899966e90dcf955e520862a41c0f13d0c5b891c46237e6",
+    "mbse_diagrams/core.py": "c7e0ffa721d46e9d110c4fcd40f19970106625b125c26b88cd9b51b13648dfac",
+    "mbse_diagrams/sysml.py": "c5a926dd965039abf8f5295f18630d067b4653f6775189f40bf348397079fbcd",
+    "notation/catalog.json": "dc0ba761acde1001e9bf19de735b2bb0ba299efb52c266091ffb678bc9fc5719",
+    "notation/mbse.drawio-library.xml": "2b0d359f4e035b7e899fb2ce113ce0da04077fab09cfa26c811e7a7014537c6b",
+    "notation/relationship.association.svg": "d4123a07b8e00e6ffc6c1601a9a17d2bc2b181e6d312f79db9238f81d6d4a587",
+    "notation/relationship.composition.svg": "c0735e02b4bcdbba330f462601d80a69646801390dba7caba28fa7bd6198a5d3",
+    "notation/relationship.connection.svg": "208a168b5af558145af94994dc0dbc8401113f457018cf2be1ff0934910b979f",
+    "notation/relationship.dependency.svg": "03cb1bc9e3284f2cf7d188f6b1451431a102dd7fd95ddbda94d9b7fef007f74e",
+    "notation/relationship.specialization.svg": "bab0a0611e73d7b5e04bfa59fc167219d08dcdafec95330c337af4d00bc2932c",
+    "notation/sysml.item-definition.svg": "a11e45a400ee17167cbf8a09db6e30a69a51de29f39c2ed93240777c70c53762",
+    "notation/sysml.item-usage.svg": "0542c833930c9bc23e519b02b624c01e32d1170fcf58264f38b03d6c638a93ff",
+    "notation/sysml.part-definition.svg": "ebead2be00cbfbbf20a33dcb1355bc323f96bec6919c7502b03a1604692cc3f8",
+    "notation/sysml.part-usage.svg": "a75d8473969c381f6624b0e902bab2afa3915918809dc313530350dd3d30f42b",
+    "notation/uml.class.svg": "d4459847afe674d7a6792db17d0087e255c514b93736a62364283157c92a8996",
+    "schemas/diagram.schema.json": "49fe5519a5bd17d11942e5d21debee27ee62c2238fee1542efe99d1c004a6505",
+    "examples/communication/communication.sysml": "40e4c28fdb1864c3bd7decd57ed241f4d3bba4b868a6513096320ceb9001af5d",
+    "examples/communication/diagram.drawio": "42377977a7d5e3d386a2d26aa21cf5e435a8ad8bbe3fe996580dfd1a2cd0050e",
+    "examples/communication/diagram.json": "f73805d634db7e2c7ac4e2b90b05d2b4eb6122fcad0287acb13782d5b64d5f62",
+    "examples/communication/diagram.mmd": "fc5ae6b59e378151b58fc986ffaa877d74924e5b6f6ca30b0202b33a16d52dac",
+    "examples/communication/diagram.svg": "f89e1b5d8fc47dd8a1124e11bac965fe293d28185db597441e1d44118fe8ba5d",
+    "examples/communication/index.html": "ca10331b28c93953ffc0698387f1f409dea73621d39c52b01c64d802be719bf7",
+    "examples/communication/mapping.json": "c381cc5482a32e848309c700310fe584b395424e26ffce99ac8b1b73f78154d7",
+    "examples/communication/mermaid-report.json": "1bf69f80cff06bbdc58419bd1bfbf54e503574b36ade519793a2d2c0d88365c5",
+    "examples/uml/diagram.drawio": "c4fd11810e51091dd7a7ea870514d31e795cf421168232ed3e091e5dd96aee4d",
+    "examples/uml/diagram.json": "8b9bdf5d79a18de2821cc4e95c699eae2ee20b12794dcb03573216f4bc45804f",
+    "examples/uml/diagram.mmd": "076974646646281314876516a73759c7fc55f5d5ecec4483a8940b3f231a7339",
+    "examples/uml/diagram.svg": "f3ebb43e5c3b74128447b7eda0f85f01d03bc95b37b58e99833b4fd49963a013",
+    "examples/uml/index.html": "062b16f00c00fe00f56854abb392f1b209e2f2d838db4b061bd8d1e47fec2931",
+    "examples/uml/mermaid-report.json": "1bf69f80cff06bbdc58419bd1bfbf54e503574b36ade519793a2d2c0d88365c5",
+    "scripts/check_browser.cjs": "4aa4510f4c832bd09dfe9199b45a41b92a8c371934b103933c89e49d1855521d",
+    "scripts/build_examples.py": "fd420e993b5618b14fc902bacef9c1866f3e23db5c3399dabc20cd5f5ea6e920",
+    "scripts/build_library.py": "135f6bf8703961a460452c0a05f84ad5b318c17f57915a29c39a36d9ac89b69e",
+    "tests/test_interchange.py": "55d9b0ca462ad8a4c44cbde7b5016bddee319ae90fb47b9707777fdd36d9c9fe"
+  },
+  "checks": {
+    "unittest": {
+      "status": "passed",
+      "count": 14,
+      "command": "python3 -m unittest discover -s tests -v"
+    },
+    "htmlBrowser": {
+      "status": "passed",
+      "examples": [
+        "communication",
+        "uml"
+      ],
+      "checks": [
+        "zoom",
+        "fit reset",
+        "model selection",
+        "SVG download",
+        "text bounds",
+        "no page errors"
+      ],
+      "tool": "installed Playwright/Chromium",
+      "command": "node scripts/check_browser.cjs with existing PLAYWRIGHT_MODULE",
+      "playwrightVersion": "1.62.1"
+    },
+    "visualReview": {
+      "status": "passed",
+      "scope": "both HTML example screenshots"
+    },
+    "drawioNativeEditor": {
+      "status": "not completed",
+      "reason": "two initialization attempts timed out"
+    },
+    "mermaidNativeRender": {
+      "status": "not run",
+      "reason": "local runtime unavailable"
+    },
+    "sysmlEngine": {
+      "status": "not run"
+    },
+    "notationConformance": {
+      "status": "not established"
+    }
+  }
+}

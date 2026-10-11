@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 270" role="img" aria-labelledby="uml-example-title uml-example-desc">
+<title id="uml-example-title">UML class view — proposed messaging design</title><desc id="uml-example-desc">2 elements, 1 relationships. Profile uml-2.5.1-class.</desc>
+<metadata>{&quot;edges&quot;: [{&quot;id&quot;: &quot;uses&quot;, &quot;kind&quot;: &quot;dependency&quot;, &quot;label&quot;: &quot;uses&quot;, &quot;points&quot;: [[300, 150], [370, 150], [440, 150]], &quot;source&quot;: &quot;Publisher&quot;, &quot;target&quot;: &quot;Message&quot;}], &quot;formatVersion&quot;: &quot;0.1&quot;, &quot;id&quot;: &quot;uml-example&quot;, &quot;nodes&quot;: [{&quot;bounds&quot;: [40, 80, 260, 150], &quot;compartments&quot;: [{&quot;lines&quot;: [&quot;publish(message : Message)&quot;], &quot;name&quot;: &quot;operations&quot;}], &quot;id&quot;: &quot;Publisher&quot;, &quot;label&quot;: &quot;Publisher&quot;, &quot;symbol&quot;: &quot;uml.class&quot;}, {&quot;bounds&quot;: [440, 80, 240, 150], &quot;compartments&quot;: [{&quot;lines&quot;: [&quot;text : String&quot;], &quot;name&quot;: &quot;attributes&quot;}], &quot;id&quot;: &quot;Message&quot;, &quot;label&quot;: &quot;Message&quot;, &quot;symbol&quot;: &quot;uml.class&quot;}], &quot;notation&quot;: &quot;uml-2.5.1-class&quot;, &quot;sources&quot;: [], &quot;title&quot;: &quot;UML class view \u2014 proposed messaging design&quot;}</metadata>
+<defs>
+<marker id="uml-example-open" viewBox="-1 -1 16 12" refX="10" refY="5" markerWidth="16" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto-start-reverse" stroke="#26364a" stroke-width="1.5"><path d="M0 0 L10 5 L0 10" fill="none"/></marker>
+<marker id="uml-example-triangle" viewBox="-1 -1 16 12" refX="10" refY="5" markerWidth="16" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto-start-reverse" stroke="#26364a" stroke-width="1.5"><path d="M0 0 L10 5 L0 10 Z" fill="white"/></marker>
+<marker id="uml-example-diamond" viewBox="-1 -1 16 12" refX="0" refY="5" markerWidth="16" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto-start-reverse" stroke="#26364a" stroke-width="1.5"><path d="M0 5 L7 0 L14 5 L7 10 Z" fill="#26364a"/></marker>
+</defs>
+<rect width="100%" height="100%" fill="#f8fafc"/>
+<g font-family="Arial, sans-serif" font-size="14" fill="#17263a">
+<g id="uml-example-uses"><title>dependency: uses</title><polyline points="300,150 370,150 440,150" fill="none" stroke="#26364a" stroke-width="1.5" marker-end="url(#uml-example-open)" stroke-dasharray="6 4"/>
+<text x="370" y="141" text-anchor="middle" paint-order="stroke" stroke="#f8fafc" stroke-width="5" stroke-linejoin="round">uses</text></g>
+<g id="uml-example-Publisher" data-model-ref="null"><title>Unbound presentation</title><rect x="40" y="80" width="260" height="150" rx="0" fill="white" stroke="#26364a" stroke-width="1.5"/>
+<text x="170.0" y="122" text-anchor="middle" font-weight="bold">Publisher</text>
+<path d="M40 136 H300" stroke="#26364a"/><text x="52" y="156" font-style="italic">operations</text>
+<text x="52" y="176">publish(message : Message)</text>
+</g>
+<g id="uml-example-Message" data-model-ref="null"><title>Unbound presentation</title><rect x="440" y="80" width="240" height="150" rx="0" fill="white" stroke="#26364a" stroke-width="1.5"/>
+<text x="560.0" y="122" text-anchor="middle" font-weight="bold">Message</text>
+<path d="M440 136 H680" stroke="#26364a"/><text x="452" y="156" font-style="italic">attributes</text>
+<text x="452" y="176">text : String</text>
+</g>
+</g></svg>

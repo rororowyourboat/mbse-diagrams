@@ -1,0 +1,101 @@
+{
+  "profile": "sysml-2.0-structural",
+  "standard": {
+    "url": "https://www.omg.org/spec/SysML/2.0/Language/PDF",
+    "document": "formal/2026-03-02",
+    "date": "March 2026"
+  },
+  "license": "MIT",
+  "origin": "Original geometry implemented in this repository; no standards figures copied",
+  "reviewStatus": "bounded implementation based on cited clauses; no conformance certification",
+  "symbols": [
+    {
+      "id": "sysml.part-definition",
+      "keyword": "part def",
+      "cornerRadius": 0,
+      "reference": "8.2.3.11",
+      "standard": "SysML 2.0",
+      "asset": "sysml.part-definition.svg",
+      "supported": "header and named textual compartments; no ports or nested presentation"
+    },
+    {
+      "id": "sysml.item-definition",
+      "keyword": "item def",
+      "cornerRadius": 0,
+      "reference": "8.2.3.10",
+      "standard": "SysML 2.0",
+      "asset": "sysml.item-definition.svg",
+      "supported": "header and named textual compartments; no ports or nested presentation"
+    },
+    {
+      "id": "sysml.part-usage",
+      "keyword": "part",
+      "cornerRadius": 12,
+      "reference": "8.2.3.11",
+      "standard": "SysML 2.0",
+      "asset": "sysml.part-usage.svg",
+      "supported": "header and named textual compartments; no ports or nested presentation"
+    },
+    {
+      "id": "sysml.item-usage",
+      "keyword": "item",
+      "cornerRadius": 12,
+      "reference": "8.2.3.10",
+      "standard": "SysML 2.0",
+      "asset": "sysml.item-usage.svg",
+      "supported": "header and named textual compartments; no ports or nested presentation"
+    },
+    {
+      "id": "uml.class",
+      "keyword": "",
+      "cornerRadius": 0,
+      "reference": "11.4 (Classes)",
+      "standard": "UML 2.5.1",
+      "asset": "uml.class.svg",
+      "supported": "header and named textual compartments; no ports or nested presentation"
+    }
+  ],
+  "relationships": [
+    {
+      "id": "specialization",
+      "marker": "hollow triangle at general endpoint",
+      "reference": "SysML 2.0 \u00a78.2.3.6; UML 2.5.1 chapters 9 and 11",
+      "asset": "relationship.specialization.svg"
+    },
+    {
+      "id": "composition",
+      "marker": "filled diamond at owning endpoint",
+      "reference": "SysML 2.0 \u00a78.2.3.6; UML 2.5.1 chapters 9 and 11",
+      "asset": "relationship.composition.svg"
+    },
+    {
+      "id": "connection",
+      "marker": "open angle arrow at target, direction indication",
+      "reference": "SysML 2.0 \u00a78.2.3.13",
+      "asset": "relationship.connection.svg"
+    },
+    {
+      "id": "dependency",
+      "marker": "dashed line, open arrow at supplier",
+      "reference": "UML 2.5.1 \u00a77.8",
+      "asset": "relationship.dependency.svg"
+    },
+    {
+      "id": "association",
+      "marker": "plain line",
+      "reference": "UML 2.5.1 \u00a711.5",
+      "asset": "relationship.association.svg"
+    }
+  ],
+  "standards": [
+    {
+      "url": "https://www.omg.org/spec/SysML/2.0/Language/PDF",
+      "document": "formal/2026-03-02",
+      "date": "March 2026"
+    },
+    {
+      "url": "https://www.omg.org/spec/UML/2.5.1",
+      "version": "2.5.1"
+    }
+  ]
+}

@@ -16,4 +16,4 @@ For symbols, record source, license, standard version, clause, supported variant
 
 Original contributions use the repository's MIT license. Third-party assets retain their own licenses; record attribution and redistribution terms before adding them. Do not copy standards illustrations on the assumption that this repository's license covers them.
 
-No implementation language or production dependencies have been selected. The Python documentation checker does not determine the future renderer's language.
+The initial CLI uses Python’s standard library. No production dependencies are installed. Run the interchange tests and rebuild examples for implementation changes.

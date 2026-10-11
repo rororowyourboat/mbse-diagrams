@@ -23,4 +23,4 @@ Record tool versions, fixture hashes, commands and observed results. Browser/edi
 
 ## Current evidence
 
-No implementation or round-trip checks have run. Existing communication diagrams are candidate fixtures, not evidence that this milestone passes.
+The initial implementation and automated XML round-trip checks are available. Browser rendering of both examples passed. Live editor initialization timed out, so acceptance steps 3–5 still need a real draw.io edit/save record. See [validation](validation.md) for passing and skipped checks.

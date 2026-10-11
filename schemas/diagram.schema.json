@@ -1,0 +1,225 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rororowyourboat.github.io/mbse-diagrams/schemas/diagram.schema.json",
+  "title": "Experimental MBSE structural diagram 0.1",
+  "type": "object",
+  "required": [
+    "formatVersion",
+    "id",
+    "title",
+    "notation",
+    "sources",
+    "nodes",
+    "edges"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "formatVersion": {
+      "const": "0.1"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z][\\w-]*$"
+    },
+    "title": {
+      "type": "string"
+    },
+    "notation": {
+      "enum": [
+        "sysml-2.0-structural",
+        "uml-2.5.1-class"
+      ]
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "uri"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "uri": {
+            "type": "string"
+          },
+          "revision": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "label",
+          "symbol",
+          "bounds"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][\\w-]*$"
+          },
+          "label": {
+            "type": "string"
+          },
+          "symbol": {
+            "enum": [
+              "sysml.part-definition",
+              "sysml.item-definition",
+              "sysml.part-usage",
+              "sysml.item-usage",
+              "uml.class"
+            ]
+          },
+          "modelRef": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "source": {
+                "type": "string"
+              },
+              "element": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "source",
+              "element"
+            ],
+            "additionalProperties": false
+          },
+          "bounds": {
+            "type": "array",
+            "prefixItems": [
+              {
+                "type": "number",
+                "minimum": 0
+              },
+              {
+                "type": "number",
+                "minimum": 0
+              },
+              {
+                "type": "number",
+                "minimum": 100
+              },
+              {
+                "type": "number",
+                "minimum": 60
+              }
+            ],
+            "minItems": 4,
+            "maxItems": 4
+          },
+          "compartments": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "lines": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "name",
+                "lines"
+              ],
+              "additionalProperties": false
+            }
+          }
+        }
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "label",
+          "kind",
+          "source",
+          "target",
+          "points"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][\\w-]*$"
+          },
+          "label": {
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "specialization",
+              "composition",
+              "connection",
+              "association",
+              "dependency"
+            ]
+          },
+          "source": {
+            "type": "string"
+          },
+          "target": {
+            "type": "string"
+          },
+          "points": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "minimum": 0
+              },
+              "minItems": 2,
+              "maxItems": 2
+            },
+            "minItems": 2
+          },
+          "modelRef": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "source": {
+                "type": "string"
+              },
+              "element": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "source",
+              "element"
+            ],
+            "additionalProperties": false
+          }
+        }
+      }
+    },
+    "extensions": {
+      "type": "object"
+    }
+  }
+}

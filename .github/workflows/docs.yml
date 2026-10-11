@@ -1,4 +1,4 @@
-name: Documentation
+name: Checks
 on:
   push:
   pull_request:
@@ -11,5 +11,12 @@ jobs:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - name: Check local documentation links
         run: python3 scripts/check_docs.py
+      - name: Test structural interchange
+        run: python3 -m unittest discover -s tests -v
+      - name: Rebuild examples and library
+        run: |
+          python3 scripts/build_examples.py
+          python3 scripts/build_library.py
+          git diff --exit-code -- examples notation/mbse.drawio-library.xml
       - name: Check whitespace
         run: git show --format= --check HEAD

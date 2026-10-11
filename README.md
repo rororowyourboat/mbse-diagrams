@@ -2,7 +2,7 @@
 
 Reusable engineering diagram notation, editable diagram interchange, and rendering tools.
 
-Status: design scaffold. No renderer or adapter is implemented yet. Repository: [rororowyourboat/mbse-diagrams](https://github.com/rororowyourboat/mbse-diagrams).
+Status: experimental version 0.1. Structural SVG/HTML rendering, bounded SysML v2 extraction, UML class-view notation, draw.io interchange and Mermaid flowchart export are implemented. Repository: [rororowyourboat/mbse-diagrams](https://github.com/rororowyourboat/mbse-diagrams).
 
 ## Goals
 
@@ -28,9 +28,13 @@ See [design](docs/design.md), [interchange contract](docs/interchange.md), and [
 
 ## Development
 
-The renderer and adapters are not implemented yet. No production dependencies are required. Run `python3 scripts/check_docs.py` and `git diff --check` to check documentation locally. GitHub Actions runs the documentation checks on pushes and pull requests.
+Run from the repository root with Python 3.10 or later; no package installation or third-party runtime dependencies are required. See [usage](docs/usage.md) and the explicit [support matrix](docs/support.md).
 
-See [contribution guidance](CONTRIBUTING.md). Establish implementation language and tooling when the first renderer is added.
+Try [the communication viewer](examples/communication/index.html) or [the UML viewer](examples/uml/index.html), or open their `.drawio` files in draw.io.
+
+Run `python3 scripts/check_docs.py`, `python3 -m unittest discover -s tests -v`, and `git diff --check`. GitHub Actions also checks reproducible example exports.
+
+See [contribution guidance](CONTRIBUTING.md). The initial CLI uses Python’s standard library. Future dependencies require a concrete need.
 
 ## License and provenance
 

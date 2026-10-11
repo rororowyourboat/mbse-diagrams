@@ -1,0 +1,19 @@
+{
+  "preserved": [
+    "node labels",
+    "edge endpoints",
+    "relationship kinds as text"
+  ],
+  "normalized": [
+    "all relationships displayed as flowchart arrows"
+  ],
+  "unsupported": [],
+  "lost": [
+    "model references",
+    "notation glyphs",
+    "compartments",
+    "layout",
+    "editable presentation IDs for edges"
+  ],
+  "scope": "explanatory flowchart export; not formal SysML/UML interchange"
+}

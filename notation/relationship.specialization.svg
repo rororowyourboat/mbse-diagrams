@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 140" role="img" aria-labelledby="marker-specialization-title marker-specialization-desc">
+<title id="marker-specialization-title">specialization relationship template</title><desc id="marker-specialization-desc">2 elements, 1 relationships. Profile uml-2.5.1-class.</desc>
+<metadata>{&quot;edges&quot;: [{&quot;id&quot;: &quot;Relationship&quot;, &quot;kind&quot;: &quot;specialization&quot;, &quot;label&quot;: &quot;specialization&quot;, &quot;points&quot;: [[180, 65], [270, 65], [360, 65]], &quot;source&quot;: &quot;Source&quot;, &quot;target&quot;: &quot;Target&quot;}], &quot;formatVersion&quot;: &quot;0.1&quot;, &quot;id&quot;: &quot;marker-specialization&quot;, &quot;nodes&quot;: [{&quot;bounds&quot;: [20, 30, 160, 70], &quot;id&quot;: &quot;Source&quot;, &quot;label&quot;: &quot;Source&quot;, &quot;symbol&quot;: &quot;uml.class&quot;}, {&quot;bounds&quot;: [360, 30, 160, 70], &quot;id&quot;: &quot;Target&quot;, &quot;label&quot;: &quot;Target&quot;, &quot;symbol&quot;: &quot;uml.class&quot;}], &quot;notation&quot;: &quot;uml-2.5.1-class&quot;, &quot;sources&quot;: [], &quot;title&quot;: &quot;specialization relationship template&quot;}</metadata>
+<defs>
+<marker id="marker-specialization-open" viewBox="-1 -1 16 12" refX="10" refY="5" markerWidth="16" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto-start-reverse" stroke="#26364a" stroke-width="1.5"><path d="M0 0 L10 5 L0 10" fill="none"/></marker>
+<marker id="marker-specialization-triangle" viewBox="-1 -1 16 12" refX="10" refY="5" markerWidth="16" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto-start-reverse" stroke="#26364a" stroke-width="1.5"><path d="M0 0 L10 5 L0 10 Z" fill="white"/></marker>
+<marker id="marker-specialization-diamond" viewBox="-1 -1 16 12" refX="0" refY="5" markerWidth="16" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto-start-reverse" stroke="#26364a" stroke-width="1.5"><path d="M0 5 L7 0 L14 5 L7 10 Z" fill="#26364a"/></marker>
+</defs>
+<rect width="100%" height="100%" fill="#f8fafc"/>
+<g font-family="Arial, sans-serif" font-size="14" fill="#17263a">
+<g id="marker-specialization-Relationship"><title>specialization: specialization</title><polyline points="180,65 270,65 360,65" fill="none" stroke="#26364a" stroke-width="1.5" marker-end="url(#marker-specialization-triangle)"/>
+<text x="270" y="56" text-anchor="middle" paint-order="stroke" stroke="#f8fafc" stroke-width="5" stroke-linejoin="round">specialization</text></g>
+<g id="marker-specialization-Source" data-model-ref="null"><title>Unbound presentation</title><rect x="20" y="30" width="160" height="70" rx="0" fill="white" stroke="#26364a" stroke-width="1.5"/>
+<text x="100.0" y="72" text-anchor="middle" font-weight="bold">Source</text>
+</g>
+<g id="marker-specialization-Target" data-model-ref="null"><title>Unbound presentation</title><rect x="360" y="30" width="160" height="70" rx="0" fill="white" stroke="#26364a" stroke-width="1.5"/>
+<text x="440.0" y="72" text-anchor="middle" font-weight="bold">Target</text>
+</g>
+</g></svg>
