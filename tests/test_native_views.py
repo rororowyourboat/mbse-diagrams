@@ -43,7 +43,10 @@ def endpoint_tuples(diagram):
 class NativeProjectionTests(unittest.TestCase):
     def setUp(self):
         self.data = json.loads((EXAMPLE / 'resolved-view.json').read_text())
-        self.texts = read_sources(EXAMPLE.glob('*.sysml'))
+        # Reproduce the source set captured by the retained projection. Other
+        # SysML files in the directory belong to views added after that capture.
+        snapshot = json.loads((EXAMPLE / 'diagram.json').read_text())
+        self.texts = read_sources(EXAMPLE / source['uri'] for source in snapshot['sources'])
 
     def test_residual_connections_port_endpoints_and_source_bindings_survive(self):
         original = copy.deepcopy(self.data)
