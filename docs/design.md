@@ -18,6 +18,8 @@ Store semantic relationship type separately from routing and arrow geometry. Sel
 
 Use draw.io XML for editable editor exchange. SVG is a view export; embedded metadata can assist traceability but is not the canonical interchange file.
 
+The optional [native view adapter](native-views.md) delegates multi-file resolution and view selection to OpenSysML. Its explicit flat projection keeps source-span and engine endpoint bindings in namespaced metadata. Source declaration cards use a separate neutral profile, avoiding a guessed formal glyph for analysis signatures. The adapter's small automatic layout changes presentation only.
+
 ## Sources
 
 - [OMG SysML 2.0](https://www.omg.org/spec/SysML/2.0), Language specification section 8.2.3.
@@ -26,4 +28,4 @@ Use draw.io XML for editable editor exchange. SVG is a view export; embedded met
 
 ## Deferred
 
-General SysML parsing beyond the strict implemented subset, model write-back, arbitrary SVG import, automatic layout, collaboration services, other editor adapters, and claims of full standards coverage.
+General SysML parsing inside this tool beyond the strict implemented subset, model write-back, arbitrary SVG import, advanced automatic layout, native nested/port presentation, collaboration services, other editor adapters, and claims of full standards coverage.

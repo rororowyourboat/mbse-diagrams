@@ -7,10 +7,10 @@
 <marker id="communication-diamond" viewBox="-1 -1 16 12" refX="0" refY="5" markerWidth="16" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto-start-reverse" stroke="#26364a" stroke-width="1.5"><path d="M0 5 L7 0 L14 5 L7 10 Z" fill="#26364a"/></marker>
 </defs>
 <rect width="100%" height="100%" fill="#f8fafc"/>
-<g font-family="Arial, sans-serif" font-size="14" fill="#17263a">
-<g id="communication-sender-specialization"><title>specialization: </title><polyline points="160,230 160,170 460,170 460,120" fill="none" stroke="#26364a" stroke-width="1.5" marker-end="url(#communication-triangle)"/>
+<g font-family="Arial, sans-serif" font-size="14" fill="#17263a" xml:space="preserve">
+<g id="communication-sender-specialization" data-model-ref="{&quot;source&quot;: &quot;model&quot;, &quot;element&quot;: &quot;CommunicationExample::Sender::specialization&quot;}"><title>specialization: </title><polyline points="160,230 160,170 460,170 460,120" fill="none" stroke="#26364a" stroke-width="1.5" marker-end="url(#communication-triangle)"/>
 <text x="460" y="161" text-anchor="middle" paint-order="stroke" stroke="#f8fafc" stroke-width="5" stroke-linejoin="round"></text></g>
-<g id="communication-receiver-specialization"><title>specialization: </title><polyline points="760,230 760,170 460,170 460,120" fill="none" stroke="#26364a" stroke-width="1.5" marker-end="url(#communication-triangle)"/>
+<g id="communication-receiver-specialization" data-model-ref="{&quot;source&quot;: &quot;model&quot;, &quot;element&quot;: &quot;CommunicationExample::Receiver::specialization&quot;}"><title>specialization: </title><polyline points="760,230 760,170 460,170 460,120" fill="none" stroke="#26364a" stroke-width="1.5" marker-end="url(#communication-triangle)"/>
 <text x="460" y="161" text-anchor="middle" paint-order="stroke" stroke="#f8fafc" stroke-width="5" stroke-linejoin="round"></text></g>
 <g id="communication-Participant" data-model-ref="{&quot;source&quot;: &quot;model&quot;, &quot;element&quot;: &quot;CommunicationExample::Participant&quot;}"><title>{&quot;source&quot;: &quot;model&quot;, &quot;element&quot;: &quot;CommunicationExample::Participant&quot;}</title><rect x="340" y="40" width="240" height="80" rx="0" fill="white" stroke="#26364a" stroke-width="1.5"/>
 <text x="460.0" y="60" text-anchor="middle">«part def»</text>

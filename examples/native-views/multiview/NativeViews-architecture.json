@@ -1,0 +1,921 @@
+{
+  "formatVersion": "0.1",
+  "id": "view-7feab0395f46",
+  "title": "NativeViews::architecture",
+  "notation": "sysml-2.0-structural",
+  "sources": [
+    {
+      "id": "source-0",
+      "uri": "experiment.sysml",
+      "revision": "sha256:9d6707c94f07c373267621a49808d3595fe4da69f9172a5fdcc548ac874dae77"
+    },
+    {
+      "id": "source-1",
+      "uri": "perspectives.sysml",
+      "revision": "sha256:c904e02cf278f08fadd44b918f1afcf6060a05f43cd36ad1eb6d3392c3824dbc"
+    },
+    {
+      "id": "source-2",
+      "uri": "structure.sysml",
+      "revision": "sha256:e4c89904cf64d284a8e99c7e2dc50e880480f1b22162efc799830ea14add6511"
+    },
+    {
+      "id": "source-3",
+      "uri": "types.sysml",
+      "revision": "sha256:b14f23a2ad2b0ba38c9a13fba46a89fde70eda06e7d1b808b4dc95c596fd359c"
+    },
+    {
+      "id": "source-4",
+      "uri": "views.sysml",
+      "revision": "sha256:d7c4daa56b5146ab98bc6c64d5b4c342917a1e7b198ea948d89f585272469492"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "node-0",
+      "label": "NativeNetwork::Transformer",
+      "symbol": "sysml.part-definition",
+      "bounds": [
+        176.0,
+        40,
+        336,
+        124
+      ],
+      "compartments": [
+        {
+          "name": "source declarations",
+          "lines": [
+            "attribute modelWidth : Integer = 128;",
+            "attribute heads : Integer = 4;"
+          ]
+        }
+      ],
+      "modelRef": {
+        "source": "source-2",
+        "element": "span:5:5:29:6"
+      }
+    },
+    {
+      "id": "node-1",
+      "label": "tokens : Source",
+      "symbol": "sysml.part-usage",
+      "bounds": [
+        40.0,
+        264,
+        240,
+        104
+      ],
+      "compartments": [
+        {
+          "name": "ports (listed)",
+          "lines": [
+            "output : TensorPort"
+          ]
+        }
+      ],
+      "modelRef": {
+        "source": "source-2",
+        "element": "span:9:9:9:30"
+      }
+    },
+    {
+      "id": "node-2",
+      "label": "tokenEmbedding : Transform",
+      "symbol": "sysml.part-usage",
+      "bounds": [
+        220.0,
+        468,
+        248,
+        124
+      ],
+      "compartments": [
+        {
+          "name": "ports (listed)",
+          "lines": [
+            "input : TensorPort",
+            "output : TensorPort"
+          ]
+        }
+      ],
+      "modelRef": {
+        "source": "source-2",
+        "element": "span:10:9:10:41"
+      }
+    },
+    {
+      "id": "node-3",
+      "label": "positionEmbedding : Source",
+      "symbol": "sysml.part-usage",
+      "bounds": [
+        400.0,
+        264,
+        248,
+        104
+      ],
+      "compartments": [
+        {
+          "name": "ports (listed)",
+          "lines": [
+            "output : TensorPort"
+          ]
+        }
+      ],
+      "modelRef": {
+        "source": "source-2",
+        "element": "span:11:9:11:41"
+      }
+    },
+    {
+      "id": "node-4",
+      "label": "embeddingAdd : Add",
+      "symbol": "sysml.part-usage",
+      "bounds": [
+        224.0,
+        692,
+        240,
+        144
+      ],
+      "compartments": [
+        {
+          "name": "ports (listed)",
+          "lines": [
+            "left : TensorPort",
+            "right : TensorPort",
+            "output : TensorPort"
+          ]
+        }
+      ],
+      "modelRef": {
+        "source": "source-2",
+        "element": "span:12:9:12:33"
+      }
+    },
+    {
+      "id": "node-5",
+      "label": "attention : Transform",
+      "symbol": "sysml.part-usage",
+      "bounds": [
+        224.0,
+        936,
+        240,
+        124
+      ],
+      "compartments": [
+        {
+          "name": "ports (listed)",
+          "lines": [
+            "input : TensorPort",
+            "output : TensorPort"
+          ]
+        }
+      ],
+      "modelRef": {
+        "source": "source-2",
+        "element": "span:13:9:13:36"
+      }
+    },
+    {
+      "id": "node-6",
+      "label": "attentionResidual : Add",
+      "symbol": "sysml.part-usage",
+      "bounds": [
+        224.0,
+        1160,
+        240,
+        144
+      ],
+      "compartments": [
+        {
+          "name": "ports (listed)",
+          "lines": [
+            "left : TensorPort",
+            "right : TensorPort",
+            "output : TensorPort"
+          ]
+        }
+      ],
+      "modelRef": {
+        "source": "source-2",
+        "element": "span:14:9:14:38"
+      }
+    },
+    {
+      "id": "node-7",
+      "label": "mlp : Transform",
+      "symbol": "sysml.part-usage",
+      "bounds": [
+        224.0,
+        1404,
+        240,
+        124
+      ],
+      "compartments": [
+        {
+          "name": "ports (listed)",
+          "lines": [
+            "input : TensorPort",
+            "output : TensorPort"
+          ]
+        }
+      ],
+      "modelRef": {
+        "source": "source-2",
+        "element": "span:15:9:15:30"
+      }
+    },
+    {
+      "id": "node-8",
+      "label": "mlpResidual : Add",
+      "symbol": "sysml.part-usage",
+      "bounds": [
+        224.0,
+        1628,
+        240,
+        144
+      ],
+      "compartments": [
+        {
+          "name": "ports (listed)",
+          "lines": [
+            "left : TensorPort",
+            "right : TensorPort",
+            "output : TensorPort"
+          ]
+        }
+      ],
+      "modelRef": {
+        "source": "source-2",
+        "element": "span:16:9:16:32"
+      }
+    },
+    {
+      "id": "node-9",
+      "label": "outputProjection : Transform",
+      "symbol": "sysml.part-usage",
+      "bounds": [
+        212.0,
+        1872,
+        264,
+        124
+      ],
+      "compartments": [
+        {
+          "name": "ports (listed)",
+          "lines": [
+            "input : TensorPort",
+            "output : TensorPort"
+          ]
+        }
+      ],
+      "modelRef": {
+        "source": "source-2",
+        "element": "span:17:9:17:43"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-0",
+      "label": "output / input",
+      "kind": "connection",
+      "source": "node-1",
+      "target": "node-2",
+      "points": [
+        [
+          160.0,
+          368
+        ],
+        [
+          160.0,
+          396
+        ],
+        [
+          344.0,
+          396
+        ],
+        [
+          344.0,
+          468
+        ]
+      ],
+      "modelRef": {
+        "source": "source-2",
+        "element": "span:19:9:19:55"
+      }
+    },
+    {
+      "id": "edge-1",
+      "label": "output / left",
+      "kind": "connection",
+      "source": "node-2",
+      "target": "node-4",
+      "points": [
+        [
+          344.0,
+          592
+        ],
+        [
+          344.0,
+          620
+        ],
+        [
+          304.0,
+          620
+        ],
+        [
+          304.0,
+          692
+        ]
+      ],
+      "modelRef": {
+        "source": "source-2",
+        "element": "span:20:9:20:60"
+      }
+    },
+    {
+      "id": "edge-2",
+      "label": "output / right",
+      "kind": "connection",
+      "source": "node-3",
+      "target": "node-4",
+      "points": [
+        [
+          524.0,
+          368
+        ],
+        [
+          524.0,
+          396
+        ],
+        [
+          748,
+          396
+        ],
+        [
+          748,
+          524.0
+        ],
+        [
+          748,
+          652
+        ],
+        [
+          384.0,
+          652
+        ],
+        [
+          384.0,
+          692
+        ]
+      ],
+      "modelRef": {
+        "source": "source-2",
+        "element": "span:21:9:21:64"
+      }
+    },
+    {
+      "id": "edge-3",
+      "label": "output / input",
+      "kind": "connection",
+      "source": "node-4",
+      "target": "node-5",
+      "points": [
+        [
+          304.0,
+          836
+        ],
+        [
+          304.0,
+          864
+        ],
+        [
+          344.0,
+          864
+        ],
+        [
+          344.0,
+          936
+        ]
+      ],
+      "modelRef": {
+        "source": "source-2",
+        "element": "span:22:9:22:56"
+      }
+    },
+    {
+      "id": "edge-4",
+      "label": "output / left",
+      "kind": "connection",
+      "source": "node-4",
+      "target": "node-6",
+      "points": [
+        [
+          384.0,
+          836
+        ],
+        [
+          384.0,
+          876
+        ],
+        [
+          828,
+          876
+        ],
+        [
+          828,
+          1004.0
+        ],
+        [
+          828,
+          1132
+        ],
+        [
+          304.0,
+          1132
+        ],
+        [
+          304.0,
+          1160
+        ]
+      ],
+      "modelRef": {
+        "source": "source-2",
+        "element": "span:23:9:23:63"
+      }
+    },
+    {
+      "id": "edge-5",
+      "label": "output / right",
+      "kind": "connection",
+      "source": "node-5",
+      "target": "node-6",
+      "points": [
+        [
+          344.0,
+          1060
+        ],
+        [
+          344.0,
+          1088
+        ],
+        [
+          384.0,
+          1088
+        ],
+        [
+          384.0,
+          1160
+        ]
+      ],
+      "modelRef": {
+        "source": "source-2",
+        "element": "span:24:9:24:61"
+      }
+    },
+    {
+      "id": "edge-6",
+      "label": "output / input",
+      "kind": "connection",
+      "source": "node-6",
+      "target": "node-7",
+      "points": [
+        [
+          304.0,
+          1304
+        ],
+        [
+          304.0,
+          1332
+        ],
+        [
+          344.0,
+          1332
+        ],
+        [
+          344.0,
+          1404
+        ]
+      ],
+      "modelRef": {
+        "source": "source-2",
+        "element": "span:25:9:25:55"
+      }
+    },
+    {
+      "id": "edge-7",
+      "label": "output / left",
+      "kind": "connection",
+      "source": "node-6",
+      "target": "node-8",
+      "points": [
+        [
+          384.0,
+          1304
+        ],
+        [
+          384.0,
+          1344
+        ],
+        [
+          908,
+          1344
+        ],
+        [
+          908,
+          1472.0
+        ],
+        [
+          908,
+          1600
+        ],
+        [
+          304.0,
+          1600
+        ],
+        [
+          304.0,
+          1628
+        ]
+      ],
+      "modelRef": {
+        "source": "source-2",
+        "element": "span:26:9:26:62"
+      }
+    },
+    {
+      "id": "edge-8",
+      "label": "output / right",
+      "kind": "connection",
+      "source": "node-7",
+      "target": "node-8",
+      "points": [
+        [
+          344.0,
+          1528
+        ],
+        [
+          344.0,
+          1556
+        ],
+        [
+          384.0,
+          1556
+        ],
+        [
+          384.0,
+          1628
+        ]
+      ],
+      "modelRef": {
+        "source": "source-2",
+        "element": "span:27:9:27:49"
+      }
+    },
+    {
+      "id": "edge-9",
+      "label": "output / input",
+      "kind": "connection",
+      "source": "node-8",
+      "target": "node-9",
+      "points": [
+        [
+          344.0,
+          1772
+        ],
+        [
+          344.0,
+          1800
+        ],
+        [
+          344.0,
+          1800
+        ],
+        [
+          344.0,
+          1872
+        ]
+      ],
+      "modelRef": {
+        "source": "source-2",
+        "element": "span:28:9:28:62"
+      }
+    }
+  ],
+  "extensions": {
+    "mbse-diagrams.native-view": {
+      "view": "NativeViews::architecture",
+      "kind": "interconnection",
+      "stated": "render asInterconnectionDiagram",
+      "elements": {
+        "n0": {
+          "modelRef": {
+            "source": "source-2",
+            "element": "span:5:5:29:6"
+          },
+          "kind": "part def",
+          "name": "NativeNetwork::Transformer",
+          "parent": "",
+          "presentation": "node-0"
+        },
+        "n1": {
+          "modelRef": {
+            "source": "source-2",
+            "element": "span:6:9:6:46"
+          },
+          "kind": "attribute",
+          "name": "modelWidth",
+          "parent": "n0",
+          "type": "Integer"
+        },
+        "n2": {
+          "modelRef": {
+            "source": "source-2",
+            "element": "span:7:9:7:39"
+          },
+          "kind": "attribute",
+          "name": "heads",
+          "parent": "n0",
+          "type": "Integer"
+        },
+        "n3": {
+          "modelRef": {
+            "source": "source-2",
+            "element": "span:9:9:9:30"
+          },
+          "kind": "part",
+          "name": "tokens",
+          "parent": "n0",
+          "type": "Source",
+          "presentation": "node-1"
+        },
+        "n4": {
+          "modelRef": {
+            "source": "source-2",
+            "element": "span:10:9:10:41"
+          },
+          "kind": "part",
+          "name": "tokenEmbedding",
+          "parent": "n0",
+          "type": "Transform",
+          "presentation": "node-2"
+        },
+        "n5": {
+          "modelRef": {
+            "source": "source-2",
+            "element": "span:11:9:11:41"
+          },
+          "kind": "part",
+          "name": "positionEmbedding",
+          "parent": "n0",
+          "type": "Source",
+          "presentation": "node-3"
+        },
+        "n6": {
+          "modelRef": {
+            "source": "source-2",
+            "element": "span:12:9:12:33"
+          },
+          "kind": "part",
+          "name": "embeddingAdd",
+          "parent": "n0",
+          "type": "Add",
+          "presentation": "node-4"
+        },
+        "n7": {
+          "modelRef": {
+            "source": "source-2",
+            "element": "span:13:9:13:36"
+          },
+          "kind": "part",
+          "name": "attention",
+          "parent": "n0",
+          "type": "Transform",
+          "presentation": "node-5"
+        },
+        "n8": {
+          "modelRef": {
+            "source": "source-2",
+            "element": "span:14:9:14:38"
+          },
+          "kind": "part",
+          "name": "attentionResidual",
+          "parent": "n0",
+          "type": "Add",
+          "presentation": "node-6"
+        },
+        "n9": {
+          "modelRef": {
+            "source": "source-2",
+            "element": "span:15:9:15:30"
+          },
+          "kind": "part",
+          "name": "mlp",
+          "parent": "n0",
+          "type": "Transform",
+          "presentation": "node-7"
+        },
+        "n10": {
+          "modelRef": {
+            "source": "source-2",
+            "element": "span:16:9:16:32"
+          },
+          "kind": "part",
+          "name": "mlpResidual",
+          "parent": "n0",
+          "type": "Add",
+          "presentation": "node-8"
+        },
+        "n11": {
+          "modelRef": {
+            "source": "source-2",
+            "element": "span:17:9:17:43"
+          },
+          "kind": "part",
+          "name": "outputProjection",
+          "parent": "n0",
+          "type": "Transform",
+          "presentation": "node-9"
+        }
+      },
+      "ports": {
+        "n3.0": {
+          "node": "node-1",
+          "name": "output",
+          "type": "TensorPort",
+          "direction": ""
+        },
+        "n4.0": {
+          "node": "node-2",
+          "name": "input",
+          "type": "TensorPort",
+          "direction": ""
+        },
+        "n4.1": {
+          "node": "node-2",
+          "name": "output",
+          "type": "TensorPort",
+          "direction": ""
+        },
+        "n5.0": {
+          "node": "node-3",
+          "name": "output",
+          "type": "TensorPort",
+          "direction": ""
+        },
+        "n6.0": {
+          "node": "node-4",
+          "name": "left",
+          "type": "TensorPort",
+          "direction": ""
+        },
+        "n6.1": {
+          "node": "node-4",
+          "name": "right",
+          "type": "TensorPort",
+          "direction": ""
+        },
+        "n6.2": {
+          "node": "node-4",
+          "name": "output",
+          "type": "TensorPort",
+          "direction": ""
+        },
+        "n7.0": {
+          "node": "node-5",
+          "name": "input",
+          "type": "TensorPort",
+          "direction": ""
+        },
+        "n7.1": {
+          "node": "node-5",
+          "name": "output",
+          "type": "TensorPort",
+          "direction": ""
+        },
+        "n8.0": {
+          "node": "node-6",
+          "name": "left",
+          "type": "TensorPort",
+          "direction": ""
+        },
+        "n8.1": {
+          "node": "node-6",
+          "name": "right",
+          "type": "TensorPort",
+          "direction": ""
+        },
+        "n8.2": {
+          "node": "node-6",
+          "name": "output",
+          "type": "TensorPort",
+          "direction": ""
+        },
+        "n9.0": {
+          "node": "node-7",
+          "name": "input",
+          "type": "TensorPort",
+          "direction": ""
+        },
+        "n9.1": {
+          "node": "node-7",
+          "name": "output",
+          "type": "TensorPort",
+          "direction": ""
+        },
+        "n10.0": {
+          "node": "node-8",
+          "name": "left",
+          "type": "TensorPort",
+          "direction": ""
+        },
+        "n10.1": {
+          "node": "node-8",
+          "name": "right",
+          "type": "TensorPort",
+          "direction": ""
+        },
+        "n10.2": {
+          "node": "node-8",
+          "name": "output",
+          "type": "TensorPort",
+          "direction": ""
+        },
+        "n11.0": {
+          "node": "node-9",
+          "name": "input",
+          "type": "TensorPort",
+          "direction": ""
+        },
+        "n11.1": {
+          "node": "node-9",
+          "name": "output",
+          "type": "TensorPort",
+          "direction": ""
+        }
+      },
+      "endpoints": {
+        "edge-0": {
+          "fromPort": "n3.0",
+          "toPort": "n4.0"
+        },
+        "edge-1": {
+          "fromPort": "n4.1",
+          "toPort": "n6.0"
+        },
+        "edge-2": {
+          "fromPort": "n5.0",
+          "toPort": "n6.1"
+        },
+        "edge-3": {
+          "fromPort": "n6.2",
+          "toPort": "n7.0"
+        },
+        "edge-4": {
+          "fromPort": "n6.2",
+          "toPort": "n8.0"
+        },
+        "edge-5": {
+          "fromPort": "n7.1",
+          "toPort": "n8.1"
+        },
+        "edge-6": {
+          "fromPort": "n8.2",
+          "toPort": "n9.0"
+        },
+        "edge-7": {
+          "fromPort": "n8.2",
+          "toPort": "n10.0"
+        },
+        "edge-8": {
+          "fromPort": "n9.1",
+          "toPort": "n10.1"
+        },
+        "edge-9": {
+          "fromPort": "n10.2",
+          "toPort": "n11.0"
+        }
+      },
+      "projection": {
+        "presentation": "structure",
+        "lost": [
+          "nested visual containment; engine parent bindings remain in metadata",
+          "port glyphs and native anchors; port identities and edge endpoints remain in metadata"
+        ],
+        "counts": {
+          "selectedElements": 12,
+          "drawnNodes": 10,
+          "listedPorts": 19,
+          "relationships": 10
+        }
+      },
+      "engine": {
+        "name": "OpenSysML",
+        "version": "v0.10.1",
+        "binarySHA256": "1469eb7516a439fc372bc99812bf8bb5b4d2fb1b7279af29b2f055d6edbd1134",
+        "transport": "stdio JSON-RPC (upstream evaluation prototype)",
+        "standardLibrary": "embedded in the selected executable",
+        "modelHash": "3d4185ba758d50594ba8db3d7023332084f06c445ab70edf2cf0d8dbcd548695"
+      }
+    }
+  }
+}

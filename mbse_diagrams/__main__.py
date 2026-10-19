@@ -12,6 +12,9 @@ from .core import validate, svg, viewer, drawio, import_drawio, mermaid
 
 
 def main():
+    if len(sys.argv) > 1 and sys.argv[1] in ('view', 'views'):
+        from .cli_views import main as view_main
+        return view_main(sys.argv[1:])
     parser = argparse.ArgumentParser(description="Structural diagram rendering and interchange")
     parser.add_argument('command', choices=['validate','svg','html','drawio','import-drawio','mermaid','sysml','layout'])
     parser.add_argument('input', type=Path)

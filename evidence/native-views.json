@@ -1,0 +1,103 @@
+{
+  "checkedAtUTC": "2026-10-19T18:22:16.756096+00:00",
+  "status": "locally implemented experimental native-view adapter; no commit or publication claimed",
+  "engine": {
+    "name": "OpenSysML",
+    "version": "v0.10.1",
+    "binarySHA256": "1469eb7516a439fc372bc99812bf8bb5b4d2fb1b7279af29b2f055d6edbd1134",
+    "transport": "stdio JSON-RPC (upstream evaluation prototype)",
+    "standardLibrary": "embedded in the selected executable",
+    "modelHash": "ae4e4e4659e72f784d17beca86aba0a054cc3f349954176f105b9a4794414088"
+  },
+  "checks": {
+    "unittest": {
+      "command": "OPENSYSML_ENGINE=/explicit/trusted/sysml-grpc uv run --locked --no-sync python -m unittest discover -s tests -v",
+      "run": 33,
+      "passed": 30,
+      "failures": 0,
+      "errors": 0,
+      "skipped": [
+        {
+          "test": "test_real_grid_preserves_engineering_fields (test_diagramatic.DiagramaticIntegrationTests.test_real_grid_preserves_engineering_fields)",
+          "reason": "'requires explicit trusted DIAGRAMATIC_PATH'"
+        },
+        {
+          "test": "test_reverse_direction_and_incomplete_layers_keep_every_node (test_diagramatic.DiagramaticIntegrationTests.test_reverse_direction_and_incomplete_layers_keep_every_node)",
+          "reason": "'requires explicit trusted DIAGRAMATIC_PATH'"
+        },
+        {
+          "test": "test_unknown_layer_node_is_rejected (test_diagramatic.DiagramaticIntegrationTests.test_unknown_layer_node_is_rejected)",
+          "reason": "'requires explicit trusted DIAGRAMATIC_PATH'"
+        }
+      ]
+    },
+    "browser": {
+      "tool": "isolated headless Google Chrome through DevTools; temporary local harness",
+      "views": 8,
+      "completedSVGDownloads": 8,
+      "pageExceptions": 0,
+      "textOverflow": 0,
+      "textCollisions": 0,
+      "checks": [
+        "zoom in/out",
+        "fit",
+        "bound node and connection source inspection",
+        "SVG download completion",
+        "text bounds"
+      ],
+      "retainedExampleViews": [
+        "communication",
+        "uml",
+        "native architecture",
+        "native baseline",
+        "native analyses"
+      ],
+      "externalPreviewViews": [
+        "Fourier architecture",
+        "Fourier baseline",
+        "Fourier analyses"
+      ],
+      "packagedPlaywrightCheck": "not run; no Playwright module configured for this session"
+    },
+    "externalFourierStudy": {
+      "inputFiles": 6,
+      "temporaryViewFiles": 1,
+      "originalSourcesChanged": false,
+      "transformerComponents": 9,
+      "contextCards": 1,
+      "listedPorts": 19,
+      "connections": 10,
+      "scope": "local external draft; source files and temporary previews are not redistributed in this repository"
+    },
+    "liveDrawioEditor": "not exercised; XML round trips and presentation edits tested",
+    "KotarUI": "not verified",
+    "nativeMermaidRendering": "not run"
+  },
+  "sourceAndOutputSHA256": {
+    "mbse_diagrams/__main__.py": "4c3d784633f16ee2039190c6ef6ef62f179328f4ba9216fc11ba12a1e0982f85",
+    "mbse_diagrams/core.py": "2a8a1a22feb4bf3f5fbc9bea4767028ac0186f2969d3997cb4eceb4ed13b6d48",
+    "mbse_diagrams/opensysml.py": "a7442419686b49afb2e53f5de67cd6054a80cf769b79e1a9b7537936e38225ee",
+    "tests/test_native_views.py": "6194c5b9dea571ec607a437cda607c21dfa868da5baeea517b2715428d08da88",
+    "schemas/diagram.schema.json": "245ee593a5d94fb1274a3f6acacb250445a3958174d7a0baae425506f16b233a",
+    "examples/native-views/analyses-report.json": "6aa449871e675c41d4da6ffe3651a7354076d63a7901475f67e689c51c00c543",
+    "examples/native-views/analyses.drawio": "e4be716d6e00bac8aeec80aa9072d7cc2955f0e529708dafd7058d1fe7db4702",
+    "examples/native-views/analyses.html": "7d26c05a9ec449af8b2dab0812feb801a6b36cee76a35b0a8e535c133ab1cb3b",
+    "examples/native-views/analyses.json": "c523fa6610ee262dfa92178d4a5a7e8879dca3018b431367b4ee3bccdfebbedc",
+    "examples/native-views/analyses.svg": "ecf28cbbeeb9491694e07cab07e9f55be5c38be03be9b10b38c7dbde2e6dc88c",
+    "examples/native-views/baseline-report.json": "ccd595dced05d7bc02750baaca0cd86cbbcb2437e28d6c6e952b142394e79c34",
+    "examples/native-views/baseline.drawio": "7b4e1dff08737887b4342abc6c728e9a6ab972a537dfedf72959524b53ceb90c",
+    "examples/native-views/baseline.html": "ffaa575fc2780a810ad418b83519d1b1889f0261c333592925803257b6c81009",
+    "examples/native-views/baseline.json": "1312e6a74b1454451e4762876f266c316c5e2a37e7ccce57e00c31bbe13ce7c7",
+    "examples/native-views/baseline.svg": "5750b1bdf2af0fd4edfe5d85a5e8f6fc66971e7bbbe4aaa124ae2088c336cde9",
+    "examples/native-views/diagram-report.json": "7440051de2d1531a50cb2ba96224381d81594c571f3ae87b2c6d8e779931a2a6",
+    "examples/native-views/diagram.drawio": "44818e0bfcb978067e88cd105cae4c5bcd09b69d2e34756ab21ff1c65e13bb67",
+    "examples/native-views/diagram.json": "44d626bf96f79d2ae580cd54b21b6c2d8f839ef4d6d2d300b9d4dcecb9729ffe",
+    "examples/native-views/diagram.svg": "e52aa331c09b3d998af56af9967cb6f7813ef88ac51b624467e2331105baf8b6",
+    "examples/native-views/experiment.sysml": "9d6707c94f07c373267621a49808d3595fe4da69f9172a5fdcc548ac874dae77",
+    "examples/native-views/index.html": "590cddc466662f9925f24274f09e6a377b1f6265c897e81f9d5729ac81a4d4e8",
+    "examples/native-views/resolved-view.json": "0e1b5bc86eadff9cf1910587dd445c568460906af474abeb12ee1f2a5ed85a63",
+    "examples/native-views/structure.sysml": "e4c89904cf64d284a8e99c7e2dc50e880480f1b22162efc799830ea14add6511",
+    "examples/native-views/types.sysml": "b14f23a2ad2b0ba38c9a13fba46a89fde70eda06e7d1b808b4dc95c596fd359c",
+    "examples/native-views/views.sysml": "d7c4daa56b5146ab98bc6c64d5b4c342917a1e7b198ea948d89f585272469492"
+  }
+}

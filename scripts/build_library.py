@@ -8,6 +8,8 @@ from mbse_diagrams.core import SYMBOLS, drawio
 ROOT=Path(__file__).resolve().parents[1]
 entries=[]
 for i,(symbol,(keyword,radius)) in enumerate(SYMBOLS.items()):
+    if symbol == 'source.element':
+        continue  # Neutral source cards are not a formal engineering stencil.
     d={'formatVersion':'0.1','id':'template','title':symbol,'notation':'sysml-2.0-structural' if symbol.startswith('sysml') else 'uml-2.5.1-class', 'sources':[], 'nodes':[{'id':'Element','label':'name : Type','symbol':symbol,'bounds':[0,0,260,124],'compartments':[{'name':'compartment','lines':['member : Type']}]}], 'edges':[]}
     model=ET.fromstring(drawio(d)).find('diagram/mxGraphModel')
     entries.append({'xml':ET.tostring(model,encoding='unicode'),'w':260,'h':124,'title':symbol})

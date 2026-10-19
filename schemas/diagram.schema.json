@@ -27,7 +27,8 @@
     "notation": {
       "enum": [
         "sysml-2.0-structural",
-        "uml-2.5.1-class"
+        "uml-2.5.1-class",
+        "source-declarations"
       ]
     },
     "sources": {
@@ -77,7 +78,8 @@
               "sysml.item-definition",
               "sysml.part-usage",
               "sysml.item-usage",
-              "uml.class"
+              "uml.class",
+              "source.element"
             ]
           },
           "modelRef": {

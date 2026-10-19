@@ -7,8 +7,8 @@
 <marker id="uml-example-diamond" viewBox="-1 -1 16 12" refX="0" refY="5" markerWidth="16" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto-start-reverse" stroke="#26364a" stroke-width="1.5"><path d="M0 5 L7 0 L14 5 L7 10 Z" fill="#26364a"/></marker>
 </defs>
 <rect width="100%" height="100%" fill="#f8fafc"/>
-<g font-family="Arial, sans-serif" font-size="14" fill="#17263a">
-<g id="uml-example-uses"><title>dependency: uses</title><polyline points="300,150 370,150 440,150" fill="none" stroke="#26364a" stroke-width="1.5" marker-end="url(#uml-example-open)" stroke-dasharray="6 4"/>
+<g font-family="Arial, sans-serif" font-size="14" fill="#17263a" xml:space="preserve">
+<g id="uml-example-uses" data-model-ref="null"><title>dependency: uses</title><polyline points="300,150 370,150 440,150" fill="none" stroke="#26364a" stroke-width="1.5" marker-end="url(#uml-example-open)" stroke-dasharray="6 4"/>
 <text x="370" y="141" text-anchor="middle" paint-order="stroke" stroke="#f8fafc" stroke-width="5" stroke-linejoin="round">uses</text></g>
 <g id="uml-example-Publisher" data-model-ref="null"><title>Unbound presentation</title><rect x="40" y="80" width="260" height="150" rx="0" fill="white" stroke="#26364a" stroke-width="1.5"/>
 <text x="170.0" y="122" text-anchor="middle" font-weight="bold">Publisher</text>

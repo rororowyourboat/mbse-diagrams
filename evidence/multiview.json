@@ -1,0 +1,170 @@
+{
+  "generatedAtUTC": "2026-10-19T18:36:03.794304+00:00",
+  "status": "local experimental multi-view batch output; no commit or publication claimed",
+  "engine": {
+    "name": "OpenSysML",
+    "version": "v0.10.1",
+    "binarySHA256": "1469eb7516a439fc372bc99812bf8bb5b4d2fb1b7279af29b2f055d6edbd1134",
+    "transport": "stdio JSON-RPC (upstream evaluation prototype)",
+    "standardLibrary": "embedded in the selected executable",
+    "modelHash": "3d4185ba758d50594ba8db3d7023332084f06c445ab70edf2cf0d8dbcd548695"
+  },
+  "modelHash": "3d4185ba758d50594ba8db3d7023332084f06c445ab70edf2cf0d8dbcd548695",
+  "command": "python3 -m mbse_diagrams views examples/native-views/*.sysml --engine <trusted-sysml-grpc> --flatten --view NativeViews::architecture --view NativeViews::components --view NativeViews::baseline --view NativeViews::analyses --view ResearchPerspectives::byRole --view ResearchPerspectives::byDomain --view ResearchPerspectives::parameterInfluence --view ResearchPerspectives::analysisTraceability --output-dir examples/native-views/multiview",
+  "sourceFiles": {
+    "types.sysml": "b14f23a2ad2b0ba38c9a13fba46a89fde70eda06e7d1b808b4dc95c596fd359c",
+    "structure.sysml": "e4c89904cf64d284a8e99c7e2dc50e880480f1b22162efc799830ea14add6511",
+    "experiment.sysml": "9d6707c94f07c373267621a49808d3595fe4da69f9172a5fdcc548ac874dae77",
+    "views.sysml": "d7c4daa56b5146ab98bc6c64d5b4c342917a1e7b198ea948d89f585272469492",
+    "perspectives.sysml": "c904e02cf278f08fadd44b918f1afcf6060a05f43cd36ad1eb6d3392c3824dbc"
+  },
+  "implementation": {
+    "mbse_diagrams/opensysml.py": "02f5c72907e3ead6998146769fd1f9b9d65b03a81ad2c3adf2e09b6506221d1c",
+    "mbse_diagrams/__main__.py": "7029942843a16ac0e033e6ff8d50797abf2bf24877f0e3949b4fed107ca278eb"
+  },
+  "views": [
+    {
+      "view": "NativeViews::analyses",
+      "presentation": "declarations",
+      "counts": {
+        "selectedElements": 12,
+        "drawnNodes": 3,
+        "listedPorts": 0,
+        "relationships": 0
+      },
+      "artifacts": {
+        "NativeViews-analyses.json": "66c39109d066b05fed6ac326bedc5c13b157c11d0f432efe071d16a59b0d73dc",
+        "NativeViews-analyses-report.json": "dfc9277f99e8e1e3c24ba8bff8c1436222e28e5717b357c92c5da5fbf4985d50",
+        "NativeViews-analyses.svg": "ade11327769694923e7465c2c774588f2b63b80ed8de4d378f6ec2a9b1acefa4",
+        "NativeViews-analyses.html": "c8a2509628e596fea87330678c2a97f274e7ad56f7a5b9628b19596d787aa22c",
+        "NativeViews-analyses.drawio": "7ea3577591301fe3b8139e3ff751d8d30ed31af1664f457c16deac8298f678af"
+      }
+    },
+    {
+      "view": "NativeViews::architecture",
+      "presentation": "structure",
+      "counts": {
+        "selectedElements": 12,
+        "drawnNodes": 10,
+        "listedPorts": 19,
+        "relationships": 10
+      },
+      "artifacts": {
+        "NativeViews-architecture.json": "b412d04a6c44e3b416db6f363e4534a48c5ae35e66ecaf2ae3940a4a29f0347e",
+        "NativeViews-architecture-report.json": "81fa71e45827833505031443f84aad6f99da5de535848bdece314ef8b5b4395a",
+        "NativeViews-architecture.svg": "cf79f9ce83bf7407a4145157bd4a451f871931276973fd0d1cc4682eb9c021af",
+        "NativeViews-architecture.html": "611176b9fa874c3debfcd2ed5ec151871e31f0ad8fb7d8b2ff13f19cfa3b0ac7",
+        "NativeViews-architecture.drawio": "0d74269c720449a2e888749634c72217bbb483653a1bfc1e8c6477d33bac6a8b"
+      }
+    },
+    {
+      "view": "NativeViews::baseline",
+      "presentation": "declarations",
+      "counts": {
+        "selectedElements": 3,
+        "drawnNodes": 1,
+        "listedPorts": 0,
+        "relationships": 0
+      },
+      "artifacts": {
+        "NativeViews-baseline.json": "06dfeb83d421bc38bf7b5273a3ae528f946222309850747128830d48541167e7",
+        "NativeViews-baseline-report.json": "d1d8deb7e2e96047f92a835adecb2933f5dfc11d626ff874c9a8827f50a2c2a3",
+        "NativeViews-baseline.svg": "354dd5e4a2b81487e9d2eb7e0454827bc81ad66dc2dde100680363ccc121c4e4",
+        "NativeViews-baseline.html": "4e50d39a52acd1fa20798864158e3597b979f490d3b92d6689dd77f7517280e0",
+        "NativeViews-baseline.drawio": "8f279f1e80da113e9f6ee0cb3d0e46a627bfd7e73028f839a924e577a9bc7e4c"
+      }
+    },
+    {
+      "view": "NativeViews::components",
+      "presentation": "declarations",
+      "counts": {
+        "selectedElements": 9,
+        "drawnNodes": 9,
+        "listedPorts": 0,
+        "relationships": 0
+      },
+      "artifacts": {
+        "NativeViews-components.json": "446a41ba566a52effa9cc3e6f6b2deee9e3bf0f1d1c768cfcdf55277d7a306f7",
+        "NativeViews-components-report.json": "8131a154a3fc18756e9f463f82b618144f93786d272abf54b7ece4e12b753cf9",
+        "NativeViews-components.svg": "a9efc87d25fd305c810f2b6002445ff39bc094c244bca640049229176b0ccd90",
+        "NativeViews-components.html": "b4dd1fe0b172cbfa2d3b864a099234e60ffbb1c4ade536527aecd7b64a405c2a",
+        "NativeViews-components.drawio": "b0c677c3b5dce31f241c64cc3b7256d48be77193785236fda280aebcb4725d2f"
+      }
+    },
+    {
+      "view": "ResearchPerspectives::analysisTraceability",
+      "presentation": "structure",
+      "counts": {
+        "selectedElements": 22,
+        "drawnNodes": 10,
+        "listedPorts": 12,
+        "relationships": 6
+      },
+      "artifacts": {
+        "ResearchPerspectives-analysisTraceability.json": "19b965b8532c16e0cb138f9cb840cc7fc5c6eaaa19e154232366f381ecdacf29",
+        "ResearchPerspectives-analysisTraceability-report.json": "287c6ab8dd2db6bc0376314f9ef4bc183e92ef58cab0d23814bf592b3dc525d9",
+        "ResearchPerspectives-analysisTraceability.svg": "607cf606eb2859a78fa9c2b9ce4a225215603fd1e15a0700cfcc106fa45fcdd8",
+        "ResearchPerspectives-analysisTraceability.html": "43aeef06b8bdd6706ea75975d974e64c76f2d474fbb98439993eaebd02a37afe",
+        "ResearchPerspectives-analysisTraceability.drawio": "3301e0e8a6cc7ff2e869ea3cab671db655bcd3a4ec047c8bb22fae75b55690c8"
+      }
+    },
+    {
+      "view": "ResearchPerspectives::byDomain",
+      "presentation": "declarations",
+      "counts": {
+        "selectedElements": 24,
+        "drawnNodes": 13,
+        "listedPorts": 0,
+        "relationships": 0
+      },
+      "artifacts": {
+        "ResearchPerspectives-byDomain.json": "d3cf55b8723de766b008fdcfe277b7c16e9ba8fc226019c487e42cf644a93c8b",
+        "ResearchPerspectives-byDomain-report.json": "6fa32f710bd71799ca63067fb12b26ac490abbe39ac104bdbac32a34136b0ab0",
+        "ResearchPerspectives-byDomain.svg": "dac3c443b849ceb923000a6e90fc67418f7ca08a56b62f43a7c9bc707481a180",
+        "ResearchPerspectives-byDomain.html": "caaa8d3fc8ccccee5442b38946e97df5e2562b55e83c5c747723180458c835a9",
+        "ResearchPerspectives-byDomain.drawio": "3808fe528bf8fb4263bab9918626e661e34b99d1bc292823485b2e80218138de"
+      }
+    },
+    {
+      "view": "ResearchPerspectives::byRole",
+      "presentation": "declarations",
+      "counts": {
+        "selectedElements": 9,
+        "drawnNodes": 9,
+        "listedPorts": 0,
+        "relationships": 0
+      },
+      "artifacts": {
+        "ResearchPerspectives-byRole.json": "7f20c588cd3de5bafa69b1dc19d7c7f9ef2c6f56601005d1ccf947d0e657b4b1",
+        "ResearchPerspectives-byRole-report.json": "d209bcf879ffdc96cbc5bb4987142e61168ee2672df438e48f597884d8d034c7",
+        "ResearchPerspectives-byRole.svg": "1ce9839397766e8f8326fe34de03af87271fd1eb4efb518191e6a8c1eaca809b",
+        "ResearchPerspectives-byRole.html": "4eedb8d53eae9d5bf7e0b79f9cf0b17162ee4addc9f2a5a17e331074a492e01c",
+        "ResearchPerspectives-byRole.drawio": "99b2fa4e4f11409b27cb8dbeb32a40938df3e034498d3444e1013b88f4276a35"
+      }
+    },
+    {
+      "view": "ResearchPerspectives::parameterInfluence",
+      "presentation": "structure",
+      "counts": {
+        "selectedElements": 7,
+        "drawnNodes": 4,
+        "listedPorts": 4,
+        "relationships": 2
+      },
+      "artifacts": {
+        "ResearchPerspectives-parameterInfluence.json": "c4a3d31a02f3518f448a85d0d30c2a060f6bbc672993a9387b37c4bbe62d247b",
+        "ResearchPerspectives-parameterInfluence-report.json": "92d0e0d6059f4af6286839ebbffb73d374e24dbeba038fd9034c017312ce5c6b",
+        "ResearchPerspectives-parameterInfluence.svg": "838eb8357f0743ab1b26d9b345ed634db3f369a29fde5a7d090f5e6ee725246c",
+        "ResearchPerspectives-parameterInfluence.html": "b0ca941291cb3d2e507f4539c5fed985e4974e8f71a90a6de7505b572f332a62",
+        "ResearchPerspectives-parameterInfluence.drawio": "fe624a13b3f840b56aec3298683cd4d5a52f2cde919840a5d6321b8319831f6a"
+      }
+    }
+  ],
+  "galleryIndexSha256": "3e40f79c35682c2572bad86d2bb259749ae0f1848b0640bb25cae1898442e7c5",
+  "rebuild": "python3 scripts/build_examples.py",
+  "limitations": [
+    "modelElement strings are author-entered labels and are not resolved target references",
+    "parameter-influence and hypothesis-trace links are model statements, not measured results",
+    "no test suite or browser check was run for this incremental change"
+  ]
+}

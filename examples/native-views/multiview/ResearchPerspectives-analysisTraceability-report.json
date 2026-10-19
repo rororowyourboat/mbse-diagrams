@@ -1,0 +1,537 @@
+{
+  "scope": "resolved native tree/interconnection view projected to flat diagram JSON 0.1",
+  "view": "ResearchPerspectives::analysisTraceability",
+  "presentation": "structure",
+  "sources": [
+    {
+      "id": "source-0",
+      "uri": "experiment.sysml",
+      "revision": "sha256:9d6707c94f07c373267621a49808d3595fe4da69f9172a5fdcc548ac874dae77"
+    },
+    {
+      "id": "source-1",
+      "uri": "perspectives.sysml",
+      "revision": "sha256:c904e02cf278f08fadd44b918f1afcf6060a05f43cd36ad1eb6d3392c3824dbc"
+    },
+    {
+      "id": "source-2",
+      "uri": "structure.sysml",
+      "revision": "sha256:e4c89904cf64d284a8e99c7e2dc50e880480f1b22162efc799830ea14add6511"
+    },
+    {
+      "id": "source-3",
+      "uri": "types.sysml",
+      "revision": "sha256:b14f23a2ad2b0ba38c9a13fba46a89fde70eda06e7d1b808b4dc95c596fd359c"
+    },
+    {
+      "id": "source-4",
+      "uri": "views.sysml",
+      "revision": "sha256:d7c4daa56b5146ab98bc6c64d5b4c342917a1e7b198ea948d89f585272469492"
+    }
+  ],
+  "resolvedView": {
+    "view": "ResearchPerspectives::analysisTraceability",
+    "kind": "interconnection",
+    "stated": "render asInterconnectionDiagram",
+    "nodes": [
+      {
+        "id": "n0",
+        "kind": "part def",
+        "name": "ResearchPerspectives::AnalysisTraceabilityMap",
+        "origin": {
+          "file": "perspectives.sysml",
+          "startLine": 77,
+          "startCol": 5,
+          "endLine": 117,
+          "endCol": 6
+        }
+      },
+      {
+        "id": "n1",
+        "kind": "part",
+        "name": "periodicity",
+        "type": "HypothesisNode",
+        "parent": "n0",
+        "ports": [
+          {
+            "id": "n1.0",
+            "name": "evaluatedBy",
+            "type": "AnalysisTraceSignal"
+          }
+        ],
+        "origin": {
+          "file": "perspectives.sysml",
+          "startLine": 78,
+          "startCol": 9,
+          "endLine": 81,
+          "endCol": 10
+        }
+      },
+      {
+        "id": "n2",
+        "kind": "attribute",
+        "name": "identifier",
+        "parent": "n1",
+        "origin": {
+          "file": "perspectives.sysml",
+          "startLine": 79,
+          "startCol": 13,
+          "endLine": 79,
+          "endCol": 45
+        }
+      },
+      {
+        "id": "n3",
+        "kind": "attribute",
+        "name": "statement",
+        "parent": "n1",
+        "origin": {
+          "file": "perspectives.sysml",
+          "startLine": 80,
+          "startCol": 13,
+          "endLine": 80,
+          "endCol": 85
+        }
+      },
+      {
+        "id": "n4",
+        "kind": "part",
+        "name": "spectrum",
+        "type": "AnalysisNode",
+        "parent": "n0",
+        "ports": [
+          {
+            "id": "n4.0",
+            "name": "addresses",
+            "type": "~AnalysisTraceSignal"
+          },
+          {
+            "id": "n4.1",
+            "name": "produces",
+            "type": "AnalysisTraceSignal"
+          }
+        ],
+        "origin": {
+          "file": "perspectives.sysml",
+          "startLine": 82,
+          "startCol": 9,
+          "endLine": 84,
+          "endCol": 10
+        }
+      },
+      {
+        "id": "n5",
+        "kind": "attribute",
+        "name": "modelElement",
+        "parent": "n4",
+        "origin": {
+          "file": "perspectives.sysml",
+          "startLine": 83,
+          "startCol": 13,
+          "endLine": 83,
+          "endCol": 71
+        }
+      },
+      {
+        "id": "n6",
+        "kind": "part",
+        "name": "spectrumObservation",
+        "type": "PlannedObservationNode",
+        "parent": "n0",
+        "ports": [
+          {
+            "id": "n6.0",
+            "name": "plannedFrom",
+            "type": "~AnalysisTraceSignal"
+          }
+        ],
+        "origin": {
+          "file": "perspectives.sysml",
+          "startLine": 85,
+          "startCol": 9,
+          "endLine": 87,
+          "endCol": 10
+        }
+      },
+      {
+        "id": "n7",
+        "kind": "attribute",
+        "name": "description",
+        "parent": "n6",
+        "origin": {
+          "file": "perspectives.sysml",
+          "startLine": 86,
+          "startCol": 13,
+          "endLine": 86,
+          "endCol": 77
+        }
+      },
+      {
+        "id": "n8",
+        "kind": "part",
+        "name": "mechanism",
+        "type": "HypothesisNode",
+        "parent": "n0",
+        "ports": [
+          {
+            "id": "n8.0",
+            "name": "evaluatedBy",
+            "type": "AnalysisTraceSignal"
+          }
+        ],
+        "origin": {
+          "file": "perspectives.sysml",
+          "startLine": 89,
+          "startCol": 9,
+          "endLine": 92,
+          "endCol": 10
+        }
+      },
+      {
+        "id": "n9",
+        "kind": "attribute",
+        "name": "identifier",
+        "parent": "n8",
+        "origin": {
+          "file": "perspectives.sysml",
+          "startLine": 90,
+          "startCol": 13,
+          "endLine": 90,
+          "endCol": 45
+        }
+      },
+      {
+        "id": "n10",
+        "kind": "attribute",
+        "name": "statement",
+        "parent": "n8",
+        "origin": {
+          "file": "perspectives.sysml",
+          "startLine": 91,
+          "startCol": 13,
+          "endLine": 91,
+          "endCol": 105
+        }
+      },
+      {
+        "id": "n11",
+        "kind": "part",
+        "name": "mechanismAnalysis",
+        "type": "AnalysisNode",
+        "parent": "n0",
+        "ports": [
+          {
+            "id": "n11.0",
+            "name": "addresses",
+            "type": "~AnalysisTraceSignal"
+          },
+          {
+            "id": "n11.1",
+            "name": "produces",
+            "type": "AnalysisTraceSignal"
+          }
+        ],
+        "origin": {
+          "file": "perspectives.sysml",
+          "startLine": 93,
+          "startCol": 9,
+          "endLine": 95,
+          "endCol": 10
+        }
+      },
+      {
+        "id": "n12",
+        "kind": "attribute",
+        "name": "modelElement",
+        "parent": "n11",
+        "origin": {
+          "file": "perspectives.sysml",
+          "startLine": 94,
+          "startCol": 13,
+          "endLine": 94,
+          "endCol": 72
+        }
+      },
+      {
+        "id": "n13",
+        "kind": "part",
+        "name": "mechanismObservation",
+        "type": "PlannedObservationNode",
+        "parent": "n0",
+        "ports": [
+          {
+            "id": "n13.0",
+            "name": "plannedFrom",
+            "type": "~AnalysisTraceSignal"
+          }
+        ],
+        "origin": {
+          "file": "perspectives.sysml",
+          "startLine": 96,
+          "startCol": 9,
+          "endLine": 98,
+          "endCol": 10
+        }
+      },
+      {
+        "id": "n14",
+        "kind": "attribute",
+        "name": "description",
+        "parent": "n13",
+        "origin": {
+          "file": "perspectives.sysml",
+          "startLine": 97,
+          "startCol": 13,
+          "endLine": 97,
+          "endCol": 77
+        }
+      },
+      {
+        "id": "n15",
+        "kind": "part",
+        "name": "causalReliance",
+        "type": "HypothesisNode",
+        "parent": "n0",
+        "ports": [
+          {
+            "id": "n15.0",
+            "name": "evaluatedBy",
+            "type": "AnalysisTraceSignal"
+          }
+        ],
+        "origin": {
+          "file": "perspectives.sysml",
+          "startLine": 100,
+          "startCol": 9,
+          "endLine": 103,
+          "endCol": 10
+        }
+      },
+      {
+        "id": "n16",
+        "kind": "attribute",
+        "name": "identifier",
+        "parent": "n15",
+        "origin": {
+          "file": "perspectives.sysml",
+          "startLine": 101,
+          "startCol": 13,
+          "endLine": 101,
+          "endCol": 45
+        }
+      },
+      {
+        "id": "n17",
+        "kind": "attribute",
+        "name": "statement",
+        "parent": "n15",
+        "origin": {
+          "file": "perspectives.sysml",
+          "startLine": 102,
+          "startCol": 13,
+          "endLine": 102,
+          "endCol": 97
+        }
+      },
+      {
+        "id": "n18",
+        "kind": "part",
+        "name": "ablation",
+        "type": "AnalysisNode",
+        "parent": "n0",
+        "ports": [
+          {
+            "id": "n18.0",
+            "name": "addresses",
+            "type": "~AnalysisTraceSignal"
+          },
+          {
+            "id": "n18.1",
+            "name": "produces",
+            "type": "AnalysisTraceSignal"
+          }
+        ],
+        "origin": {
+          "file": "perspectives.sysml",
+          "startLine": 104,
+          "startCol": 9,
+          "endLine": 106,
+          "endCol": 10
+        }
+      },
+      {
+        "id": "n19",
+        "kind": "attribute",
+        "name": "modelElement",
+        "parent": "n18",
+        "origin": {
+          "file": "perspectives.sysml",
+          "startLine": 105,
+          "startCol": 13,
+          "endLine": 105,
+          "endCol": 71
+        }
+      },
+      {
+        "id": "n20",
+        "kind": "part",
+        "name": "ablationObservation",
+        "type": "PlannedObservationNode",
+        "parent": "n0",
+        "ports": [
+          {
+            "id": "n20.0",
+            "name": "plannedFrom",
+            "type": "~AnalysisTraceSignal"
+          }
+        ],
+        "origin": {
+          "file": "perspectives.sysml",
+          "startLine": 107,
+          "startCol": 9,
+          "endLine": 109,
+          "endCol": 10
+        }
+      },
+      {
+        "id": "n21",
+        "kind": "attribute",
+        "name": "description",
+        "parent": "n20",
+        "origin": {
+          "file": "perspectives.sysml",
+          "startLine": 108,
+          "startCol": 13,
+          "endLine": 108,
+          "endCol": 77
+        }
+      }
+    ],
+    "edges": [
+      {
+        "from": "n1",
+        "to": "n4",
+        "fromPort": "n1.0",
+        "toPort": "n4.0",
+        "label": "connect",
+        "kind": "connection",
+        "origin": {
+          "file": "perspectives.sysml",
+          "startLine": 111,
+          "startCol": 9,
+          "endLine": 111,
+          "endCol": 63
+        }
+      },
+      {
+        "from": "n4",
+        "to": "n6",
+        "fromPort": "n4.1",
+        "toPort": "n6.0",
+        "label": "connect",
+        "kind": "connection",
+        "origin": {
+          "file": "perspectives.sysml",
+          "startLine": 112,
+          "startCol": 9,
+          "endLine": 112,
+          "endCol": 70
+        }
+      },
+      {
+        "from": "n8",
+        "to": "n11",
+        "fromPort": "n8.0",
+        "toPort": "n11.0",
+        "label": "connect",
+        "kind": "connection",
+        "origin": {
+          "file": "perspectives.sysml",
+          "startLine": 113,
+          "startCol": 9,
+          "endLine": 113,
+          "endCol": 70
+        }
+      },
+      {
+        "from": "n11",
+        "to": "n13",
+        "fromPort": "n11.1",
+        "toPort": "n13.0",
+        "label": "connect",
+        "kind": "connection",
+        "origin": {
+          "file": "perspectives.sysml",
+          "startLine": 114,
+          "startCol": 9,
+          "endLine": 114,
+          "endCol": 80
+        }
+      },
+      {
+        "from": "n15",
+        "to": "n18",
+        "fromPort": "n15.0",
+        "toPort": "n18.0",
+        "label": "connect",
+        "kind": "connection",
+        "origin": {
+          "file": "perspectives.sysml",
+          "startLine": 115,
+          "startCol": 9,
+          "endLine": 115,
+          "endCol": 66
+        }
+      },
+      {
+        "from": "n18",
+        "to": "n20",
+        "fromPort": "n18.1",
+        "toPort": "n20.0",
+        "label": "connect",
+        "kind": "connection",
+        "origin": {
+          "file": "perspectives.sysml",
+          "startLine": 116,
+          "startCol": 9,
+          "endLine": 116,
+          "endCol": 70
+        }
+      }
+    ]
+  },
+  "preserved": [
+    "selected element source bindings",
+    "connection endpoint identities",
+    "engine port identities/types/directions",
+    "selected member declarations"
+  ],
+  "normalized": [
+    "source spans are local references within the recorded source byte hashes",
+    "deterministic diagram layout replaces engine geometry",
+    "selected attributes/members are source text, not evaluated values"
+  ],
+  "lost": [
+    "nested visual containment; engine parent bindings remain in metadata",
+    "port glyphs and native anchors; port identities and edge endpoints remain in metadata"
+  ],
+  "unsupported": [],
+  "counts": {
+    "selectedElements": 22,
+    "drawnNodes": 10,
+    "listedPorts": 12,
+    "relationships": 6
+  },
+  "engine": {
+    "name": "OpenSysML",
+    "version": "v0.10.1",
+    "binarySHA256": "1469eb7516a439fc372bc99812bf8bb5b4d2fb1b7279af29b2f055d6edbd1134",
+    "transport": "stdio JSON-RPC (upstream evaluation prototype)",
+    "standardLibrary": "embedded in the selected executable",
+    "modelHash": "3d4185ba758d50594ba8db3d7023332084f06c445ab70edf2cf0d8dbcd548695"
+  },
+  "languageValidation": {
+    "strictConformance": true,
+    "diagnostics": []
+  }
+}

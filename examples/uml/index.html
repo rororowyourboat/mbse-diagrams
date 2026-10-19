@@ -9,8 +9,8 @@
 <marker id="uml-example-diamond" viewBox="-1 -1 16 12" refX="0" refY="5" markerWidth="16" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto-start-reverse" stroke="#26364a" stroke-width="1.5"><path d="M0 5 L7 0 L14 5 L7 10 Z" fill="#26364a"/></marker>
 </defs>
 <rect width="100%" height="100%" fill="#f8fafc"/>
-<g font-family="Arial, sans-serif" font-size="14" fill="#17263a">
-<g id="uml-example-uses"><title>dependency: uses</title><polyline points="300,150 370,150 440,150" fill="none" stroke="#26364a" stroke-width="1.5" marker-end="url(#uml-example-open)" stroke-dasharray="6 4"/>
+<g font-family="Arial, sans-serif" font-size="14" fill="#17263a" xml:space="preserve">
+<g id="uml-example-uses" data-model-ref="null"><title>dependency: uses</title><polyline points="300,150 370,150 440,150" fill="none" stroke="#26364a" stroke-width="1.5" marker-end="url(#uml-example-open)" stroke-dasharray="6 4"/>
 <text x="370" y="141" text-anchor="middle" paint-order="stroke" stroke="#f8fafc" stroke-width="5" stroke-linejoin="round">uses</text></g>
 <g id="uml-example-Publisher" data-model-ref="null"><title>Unbound presentation</title><rect x="40" y="80" width="260" height="150" rx="0" fill="white" stroke="#26364a" stroke-width="1.5"/>
 <text x="170.0" y="122" text-anchor="middle" font-weight="bold">Publisher</text>
@@ -22,5 +22,30 @@
 <path d="M440 136 H680" stroke="#26364a"/><text x="452" y="156" font-style="italic">attributes</text>
 <text x="452" y="176">text : String</text>
 </g>
-</g></svg></main><aside id="detail" aria-live="polite">Select an element to inspect its model reference.</aside>
-<script>const svg=document.querySelector('svg');let zoom=100;function scale(){svg.style.width=zoom+'%';}document.querySelector('#in').onclick=()=>{zoom=Math.min(400,zoom+25);scale()};document.querySelector('#out').onclick=()=>{zoom=Math.max(25,zoom-25);scale()};document.querySelector('#fit').onclick=()=>{zoom=100;scale()};document.querySelectorAll('[data-model-ref]').forEach(n=>{n.onclick=()=>document.querySelector('#detail').textContent=n.dataset.modelRef});document.querySelector('#download').onclick=()=>{const u=URL.createObjectURL(new Blob([new XMLSerializer().serializeToString(svg)],{type:'image/svg+xml'}));const a=document.createElement('a');a.href=u;a.download='diagram.svg';a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)};</script></html>
+</g></svg></main><aside id="detail" aria-live="polite">Select an element or connection to inspect its source reference.</aside>
+<script>
+const svg=document.querySelector('svg');
+const diagram=JSON.parse(svg.querySelector('metadata').textContent);
+let zoom=100;
+function scale(){svg.style.width=zoom+'%';svg.style.maxWidth=(svg.viewBox.baseVal.width*zoom/100)+'px';}
+scale();
+document.querySelector('#in').onclick=()=>{zoom=Math.min(400,zoom+25);scale()};
+document.querySelector('#out').onclick=()=>{zoom=Math.max(25,zoom-25);scale()};
+document.querySelector('#fit').onclick=()=>{zoom=100;scale()};
+document.querySelectorAll('[data-model-ref]').forEach(n=>{n.onclick=()=>{
+    const ref=JSON.parse(n.dataset.modelRef);
+    const origin=ref && diagram.sources.find(s=>s.id===ref.source);
+    const detail=ref ? {...ref,...(origin ? {source:origin.uri,revision:origin.revision} : {})} : {modelRef:null};
+    const native=diagram.extensions && diagram.extensions['mbse-diagrams.native-view'];
+    const id=n.id.slice(diagram.id.length+1);
+    if(native && native.endpoints[id]){
+        detail.ports=Object.fromEntries(Object.entries(native.endpoints[id]).map(([k,v])=>[k,native.ports[v]]));
+    }
+    document.querySelector('#detail').textContent=JSON.stringify(detail,null,2);
+}});
+document.querySelector('#download').onclick=()=>{
+    const u=URL.createObjectURL(new Blob([new XMLSerializer().serializeToString(svg)],{type:'image/svg+xml'}));
+    const a=document.createElement('a');a.href=u;a.download='diagram.svg';a.click();
+    setTimeout(()=>URL.revokeObjectURL(u),1000);
+};
+</script></html>

@@ -8,6 +8,8 @@ Version 0.1 supports structural views only. Support means the explicit operation
 | SVG | No | Yes | Original structural glyphs; standalone accessible SVG with model-reference metadata |
 | HTML | No | Yes | Offline viewer with zoom, fit, selection and SVG download; no model editing |
 | SysML v2 text | Bounded subset | No model write-back | One simple named package; part/item definitions; single simple specialization; typed part/item usage bodies |
+| Native SysML views | OpenSysML resolved multi-file model | Diagram JSON, then SVG/HTML/draw.io | Explicit flat projection of tree/interconnection views; ports listed, nesting flattened; engine and source bindings retained |
+| Source declaration cards | Native tree selection | SVG, HTML, draw.io | Neutral source-text cards, one member level, no relationship edges; not formal graphical notation or evaluated results |
 | UML 2.5.1 | Class-view JSON profile | SVG, HTML, draw.io | Classes, text compartments, specialization, composition, association and dependency; no XMI or UML text parser |
 | draw.io | Our exports | Native XML and shape library | Single page; compressed editor saves supported; native editable cells and labels; changed semantic endpoints/markers rejected |
 | diagramatic | Explicit source checkout | Positioned JSON | Pinned grid layout; node-overlap check; engineering fields preserved |
@@ -16,6 +18,8 @@ Version 0.1 supports structural views only. Support means the explicit operation
 Conversion commands require a receipt file. Draw.io ignores editor-only styling on import and reports that loss. Moved/resized nodes normalize edge endpoints relative to their previous bounds; interior waypoints remain explicit. This is a bounded adapter, not arbitrary draw.io interchange. New cells need explicit model mapping and are rejected in this version.
 
 SysML extractor names are local textual references, not engine-assigned UUIDs. The source hash identifies input bytes. No engine validation, library resolution, general grammar parsing or model execution is provided. The example is an original small structural fixture inspired by the communication project, not a copy or complete export of its full theory model.
+
+The separate [native-view adapter](native-views.md) does use explicit engine resolution and strict diagnostics. Its source-span references remain local to recorded file revisions. It requires `--flatten` for parents/ports and reports the lost visual notation. The strict small text extractor remains unchanged.
 
 ## Notation provenance
 

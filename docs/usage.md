@@ -23,6 +23,8 @@ python3 -m mbse_diagrams svg /tmp/extracted.json -o /tmp/extracted.svg
 
 The strict extractor rejects unsupported constructs. It does not validate the full SysML language. Inspect its receipt and generated layout before sharing.
 
+For a real multi-file model with native `view`/`expose` selection, use the [`view` command](native-views.md) for one diagram or `views` to render a set of named views in one model parse. Both delegate resolution to an explicitly selected OpenSysML executable and retain source bindings with projection receipts. [Open the retained structural example](../examples/native-views/index.html) or the [multi-view gallery](../examples/native-views/multiview/index.html).
+
 ## Edit in draw.io
 
 ```bash

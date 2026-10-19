@@ -1,0 +1,841 @@
+{
+  "formatVersion": "0.1",
+  "id": "view-89b514f176d8",
+  "title": "ResearchPerspectives::analysisTraceability",
+  "notation": "sysml-2.0-structural",
+  "sources": [
+    {
+      "id": "source-0",
+      "uri": "experiment.sysml",
+      "revision": "sha256:9d6707c94f07c373267621a49808d3595fe4da69f9172a5fdcc548ac874dae77"
+    },
+    {
+      "id": "source-1",
+      "uri": "perspectives.sysml",
+      "revision": "sha256:c904e02cf278f08fadd44b918f1afcf6060a05f43cd36ad1eb6d3392c3824dbc"
+    },
+    {
+      "id": "source-2",
+      "uri": "structure.sysml",
+      "revision": "sha256:e4c89904cf64d284a8e99c7e2dc50e880480f1b22162efc799830ea14add6511"
+    },
+    {
+      "id": "source-3",
+      "uri": "types.sysml",
+      "revision": "sha256:b14f23a2ad2b0ba38c9a13fba46a89fde70eda06e7d1b808b4dc95c596fd359c"
+    },
+    {
+      "id": "source-4",
+      "uri": "views.sysml",
+      "revision": "sha256:d7c4daa56b5146ab98bc6c64d5b4c342917a1e7b198ea948d89f585272469492"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "node-0",
+      "label": "ResearchPerspectives::AnalysisTraceabilityMap",
+      "symbol": "sysml.part-definition",
+      "bounds": [
+        1012.0,
+        40,
+        400,
+        80
+      ],
+      "compartments": [],
+      "modelRef": {
+        "source": "source-1",
+        "element": "span:77:5:117:6"
+      }
+    },
+    {
+      "id": "node-1",
+      "label": "periodicity : HypothesisNode",
+      "symbol": "sysml.part-usage",
+      "bounds": [
+        40.0,
+        220,
+        616,
+        172
+      ],
+      "compartments": [
+        {
+          "name": "source declarations",
+          "lines": [
+            "attribute :>> identifier = \"H1\";",
+            "attribute :>> statement = \"Learned embeddings show periodic structure.\";"
+          ]
+        },
+        {
+          "name": "ports (listed)",
+          "lines": [
+            "evaluatedBy : AnalysisTraceSignal"
+          ]
+        }
+      ],
+      "modelRef": {
+        "source": "source-1",
+        "element": "span:78:9:81:10"
+      }
+    },
+    {
+      "id": "node-2",
+      "label": "spectrum : AnalysisNode",
+      "symbol": "sysml.part-usage",
+      "bounds": [
+        332.0,
+        492,
+        504,
+        172
+      ],
+      "compartments": [
+        {
+          "name": "source declarations",
+          "lines": [
+            "attribute :>> modelElement = \"NativeExperiment::Spectrum\";"
+          ]
+        },
+        {
+          "name": "ports (listed)",
+          "lines": [
+            "addresses : ~AnalysisTraceSignal",
+            "produces : AnalysisTraceSignal"
+          ]
+        }
+      ],
+      "modelRef": {
+        "source": "source-1",
+        "element": "span:82:9:84:10"
+      }
+    },
+    {
+      "id": "node-3",
+      "label": "spectrumObservation : PlannedObservationNode",
+      "symbol": "sysml.part-usage",
+      "bounds": [
+        264.0,
+        764,
+        552,
+        152
+      ],
+      "compartments": [
+        {
+          "name": "source declarations",
+          "lines": [
+            "attribute :>> description = \"Planned embedding spectrum output\";"
+          ]
+        },
+        {
+          "name": "ports (listed)",
+          "lines": [
+            "plannedFrom : ~AnalysisTraceSignal"
+          ]
+        }
+      ],
+      "modelRef": {
+        "source": "source-1",
+        "element": "span:85:9:87:10"
+      }
+    },
+    {
+      "id": "node-4",
+      "label": "mechanism : HypothesisNode",
+      "symbol": "sysml.part-usage",
+      "bounds": [
+        776.0,
+        220,
+        776,
+        172
+      ],
+      "compartments": [
+        {
+          "name": "source declarations",
+          "lines": [
+            "attribute :>> identifier = \"H2\";",
+            "attribute :>> statement = \"The learned computation follows the proposed Fourier mechanism.\";"
+          ]
+        },
+        {
+          "name": "ports (listed)",
+          "lines": [
+            "evaluatedBy : AnalysisTraceSignal"
+          ]
+        }
+      ],
+      "modelRef": {
+        "source": "source-1",
+        "element": "span:89:9:92:10"
+      }
+    },
+    {
+      "id": "node-5",
+      "label": "mechanismAnalysis : AnalysisNode",
+      "symbol": "sysml.part-usage",
+      "bounds": [
+        956.0,
+        492,
+        512,
+        172
+      ],
+      "compartments": [
+        {
+          "name": "source declarations",
+          "lines": [
+            "attribute :>> modelElement = \"NativeExperiment::Mechanism\";"
+          ]
+        },
+        {
+          "name": "ports (listed)",
+          "lines": [
+            "addresses : ~AnalysisTraceSignal",
+            "produces : AnalysisTraceSignal"
+          ]
+        }
+      ],
+      "modelRef": {
+        "source": "source-1",
+        "element": "span:93:9:95:10"
+      }
+    },
+    {
+      "id": "node-6",
+      "label": "mechanismObservation : PlannedObservationNode",
+      "symbol": "sysml.part-usage",
+      "bounds": [
+        936.0,
+        764,
+        552,
+        152
+      ],
+      "compartments": [
+        {
+          "name": "source declarations",
+          "lines": [
+            "attribute :>> description = \"Planned mechanism analysis output\";"
+          ]
+        },
+        {
+          "name": "ports (listed)",
+          "lines": [
+            "plannedFrom : ~AnalysisTraceSignal"
+          ]
+        }
+      ],
+      "modelRef": {
+        "source": "source-1",
+        "element": "span:96:9:98:10"
+      }
+    },
+    {
+      "id": "node-7",
+      "label": "causalReliance : HypothesisNode",
+      "symbol": "sysml.part-usage",
+      "bounds": [
+        1672.0,
+        220,
+        712,
+        172
+      ],
+      "compartments": [
+        {
+          "name": "source declarations",
+          "lines": [
+            "attribute :>> identifier = \"H3\";",
+            "attribute :>> statement = \"Predictions rely on the identified Fourier frequencies.\";"
+          ]
+        },
+        {
+          "name": "ports (listed)",
+          "lines": [
+            "evaluatedBy : AnalysisTraceSignal"
+          ]
+        }
+      ],
+      "modelRef": {
+        "source": "source-1",
+        "element": "span:100:9:103:10"
+      }
+    },
+    {
+      "id": "node-8",
+      "label": "ablation : AnalysisNode",
+      "symbol": "sysml.part-usage",
+      "bounds": [
+        1588.0,
+        492,
+        504,
+        172
+      ],
+      "compartments": [
+        {
+          "name": "source declarations",
+          "lines": [
+            "attribute :>> modelElement = \"NativeExperiment::Ablation\";"
+          ]
+        },
+        {
+          "name": "ports (listed)",
+          "lines": [
+            "addresses : ~AnalysisTraceSignal",
+            "produces : AnalysisTraceSignal"
+          ]
+        }
+      ],
+      "modelRef": {
+        "source": "source-1",
+        "element": "span:104:9:106:10"
+      }
+    },
+    {
+      "id": "node-9",
+      "label": "ablationObservation : PlannedObservationNode",
+      "symbol": "sysml.part-usage",
+      "bounds": [
+        1608.0,
+        764,
+        552,
+        152
+      ],
+      "compartments": [
+        {
+          "name": "source declarations",
+          "lines": [
+            "attribute :>> description = \"Planned frequency ablation output\";"
+          ]
+        },
+        {
+          "name": "ports (listed)",
+          "lines": [
+            "plannedFrom : ~AnalysisTraceSignal"
+          ]
+        }
+      ],
+      "modelRef": {
+        "source": "source-1",
+        "element": "span:107:9:109:10"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-0",
+      "label": "evaluatedBy / addresses",
+      "kind": "connection",
+      "source": "node-1",
+      "target": "node-2",
+      "points": [
+        [
+          348.0,
+          392
+        ],
+        [
+          348.0,
+          420
+        ],
+        [
+          584.0,
+          420
+        ],
+        [
+          584.0,
+          492
+        ]
+      ],
+      "modelRef": {
+        "source": "source-1",
+        "element": "span:111:9:111:63"
+      }
+    },
+    {
+      "id": "edge-1",
+      "label": "produces / plannedFrom",
+      "kind": "connection",
+      "source": "node-2",
+      "target": "node-3",
+      "points": [
+        [
+          584.0,
+          664
+        ],
+        [
+          584.0,
+          692
+        ],
+        [
+          540.0,
+          692
+        ],
+        [
+          540.0,
+          764
+        ]
+      ],
+      "modelRef": {
+        "source": "source-1",
+        "element": "span:112:9:112:70"
+      }
+    },
+    {
+      "id": "edge-2",
+      "label": "evaluatedBy / addresses",
+      "kind": "connection",
+      "source": "node-4",
+      "target": "node-5",
+      "points": [
+        [
+          1164.0,
+          392
+        ],
+        [
+          1164.0,
+          420
+        ],
+        [
+          1212.0,
+          420
+        ],
+        [
+          1212.0,
+          492
+        ]
+      ],
+      "modelRef": {
+        "source": "source-1",
+        "element": "span:113:9:113:70"
+      }
+    },
+    {
+      "id": "edge-3",
+      "label": "produces / plannedFrom",
+      "kind": "connection",
+      "source": "node-5",
+      "target": "node-6",
+      "points": [
+        [
+          1212.0,
+          664
+        ],
+        [
+          1212.0,
+          692
+        ],
+        [
+          1212.0,
+          692
+        ],
+        [
+          1212.0,
+          764
+        ]
+      ],
+      "modelRef": {
+        "source": "source-1",
+        "element": "span:114:9:114:80"
+      }
+    },
+    {
+      "id": "edge-4",
+      "label": "evaluatedBy / addresses",
+      "kind": "connection",
+      "source": "node-7",
+      "target": "node-8",
+      "points": [
+        [
+          2028.0,
+          392
+        ],
+        [
+          2028.0,
+          420
+        ],
+        [
+          1840.0,
+          420
+        ],
+        [
+          1840.0,
+          492
+        ]
+      ],
+      "modelRef": {
+        "source": "source-1",
+        "element": "span:115:9:115:66"
+      }
+    },
+    {
+      "id": "edge-5",
+      "label": "produces / plannedFrom",
+      "kind": "connection",
+      "source": "node-8",
+      "target": "node-9",
+      "points": [
+        [
+          1840.0,
+          664
+        ],
+        [
+          1840.0,
+          692
+        ],
+        [
+          1884.0,
+          692
+        ],
+        [
+          1884.0,
+          764
+        ]
+      ],
+      "modelRef": {
+        "source": "source-1",
+        "element": "span:116:9:116:70"
+      }
+    }
+  ],
+  "extensions": {
+    "mbse-diagrams.native-view": {
+      "view": "ResearchPerspectives::analysisTraceability",
+      "kind": "interconnection",
+      "stated": "render asInterconnectionDiagram",
+      "elements": {
+        "n0": {
+          "modelRef": {
+            "source": "source-1",
+            "element": "span:77:5:117:6"
+          },
+          "kind": "part def",
+          "name": "ResearchPerspectives::AnalysisTraceabilityMap",
+          "parent": "",
+          "presentation": "node-0"
+        },
+        "n1": {
+          "modelRef": {
+            "source": "source-1",
+            "element": "span:78:9:81:10"
+          },
+          "kind": "part",
+          "name": "periodicity",
+          "parent": "n0",
+          "type": "HypothesisNode",
+          "presentation": "node-1"
+        },
+        "n2": {
+          "modelRef": {
+            "source": "source-1",
+            "element": "span:79:13:79:45"
+          },
+          "kind": "attribute",
+          "name": "identifier",
+          "parent": "n1"
+        },
+        "n3": {
+          "modelRef": {
+            "source": "source-1",
+            "element": "span:80:13:80:85"
+          },
+          "kind": "attribute",
+          "name": "statement",
+          "parent": "n1"
+        },
+        "n4": {
+          "modelRef": {
+            "source": "source-1",
+            "element": "span:82:9:84:10"
+          },
+          "kind": "part",
+          "name": "spectrum",
+          "parent": "n0",
+          "type": "AnalysisNode",
+          "presentation": "node-2"
+        },
+        "n5": {
+          "modelRef": {
+            "source": "source-1",
+            "element": "span:83:13:83:71"
+          },
+          "kind": "attribute",
+          "name": "modelElement",
+          "parent": "n4"
+        },
+        "n6": {
+          "modelRef": {
+            "source": "source-1",
+            "element": "span:85:9:87:10"
+          },
+          "kind": "part",
+          "name": "spectrumObservation",
+          "parent": "n0",
+          "type": "PlannedObservationNode",
+          "presentation": "node-3"
+        },
+        "n7": {
+          "modelRef": {
+            "source": "source-1",
+            "element": "span:86:13:86:77"
+          },
+          "kind": "attribute",
+          "name": "description",
+          "parent": "n6"
+        },
+        "n8": {
+          "modelRef": {
+            "source": "source-1",
+            "element": "span:89:9:92:10"
+          },
+          "kind": "part",
+          "name": "mechanism",
+          "parent": "n0",
+          "type": "HypothesisNode",
+          "presentation": "node-4"
+        },
+        "n9": {
+          "modelRef": {
+            "source": "source-1",
+            "element": "span:90:13:90:45"
+          },
+          "kind": "attribute",
+          "name": "identifier",
+          "parent": "n8"
+        },
+        "n10": {
+          "modelRef": {
+            "source": "source-1",
+            "element": "span:91:13:91:105"
+          },
+          "kind": "attribute",
+          "name": "statement",
+          "parent": "n8"
+        },
+        "n11": {
+          "modelRef": {
+            "source": "source-1",
+            "element": "span:93:9:95:10"
+          },
+          "kind": "part",
+          "name": "mechanismAnalysis",
+          "parent": "n0",
+          "type": "AnalysisNode",
+          "presentation": "node-5"
+        },
+        "n12": {
+          "modelRef": {
+            "source": "source-1",
+            "element": "span:94:13:94:72"
+          },
+          "kind": "attribute",
+          "name": "modelElement",
+          "parent": "n11"
+        },
+        "n13": {
+          "modelRef": {
+            "source": "source-1",
+            "element": "span:96:9:98:10"
+          },
+          "kind": "part",
+          "name": "mechanismObservation",
+          "parent": "n0",
+          "type": "PlannedObservationNode",
+          "presentation": "node-6"
+        },
+        "n14": {
+          "modelRef": {
+            "source": "source-1",
+            "element": "span:97:13:97:77"
+          },
+          "kind": "attribute",
+          "name": "description",
+          "parent": "n13"
+        },
+        "n15": {
+          "modelRef": {
+            "source": "source-1",
+            "element": "span:100:9:103:10"
+          },
+          "kind": "part",
+          "name": "causalReliance",
+          "parent": "n0",
+          "type": "HypothesisNode",
+          "presentation": "node-7"
+        },
+        "n16": {
+          "modelRef": {
+            "source": "source-1",
+            "element": "span:101:13:101:45"
+          },
+          "kind": "attribute",
+          "name": "identifier",
+          "parent": "n15"
+        },
+        "n17": {
+          "modelRef": {
+            "source": "source-1",
+            "element": "span:102:13:102:97"
+          },
+          "kind": "attribute",
+          "name": "statement",
+          "parent": "n15"
+        },
+        "n18": {
+          "modelRef": {
+            "source": "source-1",
+            "element": "span:104:9:106:10"
+          },
+          "kind": "part",
+          "name": "ablation",
+          "parent": "n0",
+          "type": "AnalysisNode",
+          "presentation": "node-8"
+        },
+        "n19": {
+          "modelRef": {
+            "source": "source-1",
+            "element": "span:105:13:105:71"
+          },
+          "kind": "attribute",
+          "name": "modelElement",
+          "parent": "n18"
+        },
+        "n20": {
+          "modelRef": {
+            "source": "source-1",
+            "element": "span:107:9:109:10"
+          },
+          "kind": "part",
+          "name": "ablationObservation",
+          "parent": "n0",
+          "type": "PlannedObservationNode",
+          "presentation": "node-9"
+        },
+        "n21": {
+          "modelRef": {
+            "source": "source-1",
+            "element": "span:108:13:108:77"
+          },
+          "kind": "attribute",
+          "name": "description",
+          "parent": "n20"
+        }
+      },
+      "ports": {
+        "n1.0": {
+          "node": "node-1",
+          "name": "evaluatedBy",
+          "type": "AnalysisTraceSignal",
+          "direction": ""
+        },
+        "n4.0": {
+          "node": "node-2",
+          "name": "addresses",
+          "type": "~AnalysisTraceSignal",
+          "direction": ""
+        },
+        "n4.1": {
+          "node": "node-2",
+          "name": "produces",
+          "type": "AnalysisTraceSignal",
+          "direction": ""
+        },
+        "n6.0": {
+          "node": "node-3",
+          "name": "plannedFrom",
+          "type": "~AnalysisTraceSignal",
+          "direction": ""
+        },
+        "n8.0": {
+          "node": "node-4",
+          "name": "evaluatedBy",
+          "type": "AnalysisTraceSignal",
+          "direction": ""
+        },
+        "n11.0": {
+          "node": "node-5",
+          "name": "addresses",
+          "type": "~AnalysisTraceSignal",
+          "direction": ""
+        },
+        "n11.1": {
+          "node": "node-5",
+          "name": "produces",
+          "type": "AnalysisTraceSignal",
+          "direction": ""
+        },
+        "n13.0": {
+          "node": "node-6",
+          "name": "plannedFrom",
+          "type": "~AnalysisTraceSignal",
+          "direction": ""
+        },
+        "n15.0": {
+          "node": "node-7",
+          "name": "evaluatedBy",
+          "type": "AnalysisTraceSignal",
+          "direction": ""
+        },
+        "n18.0": {
+          "node": "node-8",
+          "name": "addresses",
+          "type": "~AnalysisTraceSignal",
+          "direction": ""
+        },
+        "n18.1": {
+          "node": "node-8",
+          "name": "produces",
+          "type": "AnalysisTraceSignal",
+          "direction": ""
+        },
+        "n20.0": {
+          "node": "node-9",
+          "name": "plannedFrom",
+          "type": "~AnalysisTraceSignal",
+          "direction": ""
+        }
+      },
+      "endpoints": {
+        "edge-0": {
+          "fromPort": "n1.0",
+          "toPort": "n4.0"
+        },
+        "edge-1": {
+          "fromPort": "n4.1",
+          "toPort": "n6.0"
+        },
+        "edge-2": {
+          "fromPort": "n8.0",
+          "toPort": "n11.0"
+        },
+        "edge-3": {
+          "fromPort": "n11.1",
+          "toPort": "n13.0"
+        },
+        "edge-4": {
+          "fromPort": "n15.0",
+          "toPort": "n18.0"
+        },
+        "edge-5": {
+          "fromPort": "n18.1",
+          "toPort": "n20.0"
+        }
+      },
+      "projection": {
+        "presentation": "structure",
+        "lost": [
+          "nested visual containment; engine parent bindings remain in metadata",
+          "port glyphs and native anchors; port identities and edge endpoints remain in metadata"
+        ],
+        "counts": {
+          "selectedElements": 22,
+          "drawnNodes": 10,
+          "listedPorts": 12,
+          "relationships": 6
+        }
+      },
+      "engine": {
+        "name": "OpenSysML",
+        "version": "v0.10.1",
+        "binarySHA256": "1469eb7516a439fc372bc99812bf8bb5b4d2fb1b7279af29b2f055d6edbd1134",
+        "transport": "stdio JSON-RPC (upstream evaluation prototype)",
+        "standardLibrary": "embedded in the selected executable",
+        "modelHash": "3d4185ba758d50594ba8db3d7023332084f06c445ab70edf2cf0d8dbcd548695"
+      }
+    }
+  }
+}

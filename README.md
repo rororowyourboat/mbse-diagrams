@@ -4,6 +4,8 @@ Reusable engineering diagram notation, editable diagram interchange, and renderi
 
 Status: experimental version 0.1. Structural SVG/HTML rendering, bounded SysML v2 extraction, UML class-view notation, draw.io interchange and Mermaid flowchart export are implemented. Repository: [rororowyourboat/mbse-diagrams](https://github.com/rororowyourboat/mbse-diagrams).
 
+Native SysML v2 views can also be resolved across multiple files through an explicitly selected OpenSysML executable. The adapter exports a flat structural view or source declaration cards, with source hashes, port endpoint bindings and a projection receipt. The `views` command renders several model-authored views from one parse. See [native view usage and limits](docs/native-views.md), [the transformer example](examples/native-views/index.html), and the [multi-view gallery](examples/native-views/multiview/index.html) with structural, role/domain, parameter-influence and hypothesis-traceability views.
+
 ## Goals
 
 - Let people draw SysML v2 diagrams using reusable symbols with standards provenance.
@@ -19,6 +21,8 @@ Start with SysML v2; keep other engineering notations as future extensions. This
 3. Tools: SVG renderer and bidirectional draw.io adapter.
 
 The engineering model remains authoritative for semantics. Diagram edits change presentation; they do not silently modify the source model.
+
+For native views, OpenSysML evaluates `view`/`expose`/filters and inherited rendering. This project projects the resolved selection into its existing presentation format; it does not replace the engine or add another general SysML parser.
 
 ## First milestone
 

@@ -1,0 +1,335 @@
+{
+  "formatVersion": "0.1",
+  "id": "view-e04a39f7fef6",
+  "title": "ResearchPerspectives::parameterInfluence",
+  "notation": "sysml-2.0-structural",
+  "sources": [
+    {
+      "id": "source-0",
+      "uri": "experiment.sysml",
+      "revision": "sha256:9d6707c94f07c373267621a49808d3595fe4da69f9172a5fdcc548ac874dae77"
+    },
+    {
+      "id": "source-1",
+      "uri": "perspectives.sysml",
+      "revision": "sha256:c904e02cf278f08fadd44b918f1afcf6060a05f43cd36ad1eb6d3392c3824dbc"
+    },
+    {
+      "id": "source-2",
+      "uri": "structure.sysml",
+      "revision": "sha256:e4c89904cf64d284a8e99c7e2dc50e880480f1b22162efc799830ea14add6511"
+    },
+    {
+      "id": "source-3",
+      "uri": "types.sysml",
+      "revision": "sha256:b14f23a2ad2b0ba38c9a13fba46a89fde70eda06e7d1b808b4dc95c596fd359c"
+    },
+    {
+      "id": "source-4",
+      "uri": "views.sysml",
+      "revision": "sha256:d7c4daa56b5146ab98bc6c64d5b4c342917a1e7b198ea948d89f585272469492"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "node-0",
+      "label": "ResearchPerspectives::ParameterInfluenceMap",
+      "symbol": "sysml.part-definition",
+      "bounds": [
+        172.0,
+        40,
+        384,
+        80
+      ],
+      "compartments": [],
+      "modelRef": {
+        "source": "source-1",
+        "element": "span:43:5:56:6"
+      }
+    },
+    {
+      "id": "node-1",
+      "label": "modulus : InfluenceSource",
+      "symbol": "sysml.part-usage",
+      "bounds": [
+        76.0,
+        220,
+        576,
+        152
+      ],
+      "compartments": [
+        {
+          "name": "source declarations",
+          "lines": [
+            "attribute :>> modelElement = \"NativeExperiment::baseline::modulus\";"
+          ]
+        },
+        {
+          "name": "ports (listed)",
+          "lines": [
+            "influences : ParameterInfluenceSignal"
+          ]
+        }
+      ],
+      "modelRef": {
+        "source": "source-1",
+        "element": "span:44:9:46:10"
+      }
+    },
+    {
+      "id": "node-2",
+      "label": "targetClassSpace : InfluenceStep",
+      "symbol": "sysml.part-usage",
+      "bounds": [
+        52.0,
+        472,
+        624,
+        172
+      ],
+      "compartments": [
+        {
+          "name": "source declarations",
+          "lines": [
+            "attribute :>> modelElement = \"NativeNetwork::Transformer::outputClasses\";"
+          ]
+        },
+        {
+          "name": "ports (listed)",
+          "lines": [
+            "influencedBy : ~ParameterInfluenceSignal",
+            "influences : ParameterInfluenceSignal"
+          ]
+        }
+      ],
+      "modelRef": {
+        "source": "source-1",
+        "element": "span:47:9:49:10"
+      }
+    },
+    {
+      "id": "node-3",
+      "label": "outputProjection : InfluenceTarget",
+      "symbol": "sysml.part-usage",
+      "bounds": [
+        40.0,
+        744,
+        648,
+        152
+      ],
+      "compartments": [
+        {
+          "name": "source declarations",
+          "lines": [
+            "attribute :>> modelElement = \"NativeNetwork::Transformer::outputProjection\";"
+          ]
+        },
+        {
+          "name": "ports (listed)",
+          "lines": [
+            "influencedBy : ~ParameterInfluenceSignal"
+          ]
+        }
+      ],
+      "modelRef": {
+        "source": "source-1",
+        "element": "span:50:9:52:10"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-0",
+      "label": "influences / influencedBy",
+      "kind": "connection",
+      "source": "node-1",
+      "target": "node-2",
+      "points": [
+        [
+          364.0,
+          372
+        ],
+        [
+          364.0,
+          400
+        ],
+        [
+          364.0,
+          400
+        ],
+        [
+          364.0,
+          472
+        ]
+      ],
+      "modelRef": {
+        "source": "source-1",
+        "element": "span:54:9:54:69"
+      }
+    },
+    {
+      "id": "edge-1",
+      "label": "influences / influencedBy",
+      "kind": "connection",
+      "source": "node-2",
+      "target": "node-3",
+      "points": [
+        [
+          364.0,
+          644
+        ],
+        [
+          364.0,
+          672
+        ],
+        [
+          364.0,
+          672
+        ],
+        [
+          364.0,
+          744
+        ]
+      ],
+      "modelRef": {
+        "source": "source-1",
+        "element": "span:55:9:55:78"
+      }
+    }
+  ],
+  "extensions": {
+    "mbse-diagrams.native-view": {
+      "view": "ResearchPerspectives::parameterInfluence",
+      "kind": "interconnection",
+      "stated": "render asInterconnectionDiagram",
+      "elements": {
+        "n0": {
+          "modelRef": {
+            "source": "source-1",
+            "element": "span:43:5:56:6"
+          },
+          "kind": "part def",
+          "name": "ResearchPerspectives::ParameterInfluenceMap",
+          "parent": "",
+          "presentation": "node-0"
+        },
+        "n1": {
+          "modelRef": {
+            "source": "source-1",
+            "element": "span:44:9:46:10"
+          },
+          "kind": "part",
+          "name": "modulus",
+          "parent": "n0",
+          "type": "InfluenceSource",
+          "presentation": "node-1"
+        },
+        "n2": {
+          "modelRef": {
+            "source": "source-1",
+            "element": "span:45:13:45:80"
+          },
+          "kind": "attribute",
+          "name": "modelElement",
+          "parent": "n1"
+        },
+        "n3": {
+          "modelRef": {
+            "source": "source-1",
+            "element": "span:47:9:49:10"
+          },
+          "kind": "part",
+          "name": "targetClassSpace",
+          "parent": "n0",
+          "type": "InfluenceStep",
+          "presentation": "node-2"
+        },
+        "n4": {
+          "modelRef": {
+            "source": "source-1",
+            "element": "span:48:13:48:86"
+          },
+          "kind": "attribute",
+          "name": "modelElement",
+          "parent": "n3"
+        },
+        "n5": {
+          "modelRef": {
+            "source": "source-1",
+            "element": "span:50:9:52:10"
+          },
+          "kind": "part",
+          "name": "outputProjection",
+          "parent": "n0",
+          "type": "InfluenceTarget",
+          "presentation": "node-3"
+        },
+        "n6": {
+          "modelRef": {
+            "source": "source-1",
+            "element": "span:51:13:51:89"
+          },
+          "kind": "attribute",
+          "name": "modelElement",
+          "parent": "n5"
+        }
+      },
+      "ports": {
+        "n1.0": {
+          "node": "node-1",
+          "name": "influences",
+          "type": "ParameterInfluenceSignal",
+          "direction": ""
+        },
+        "n3.0": {
+          "node": "node-2",
+          "name": "influencedBy",
+          "type": "~ParameterInfluenceSignal",
+          "direction": ""
+        },
+        "n3.1": {
+          "node": "node-2",
+          "name": "influences",
+          "type": "ParameterInfluenceSignal",
+          "direction": ""
+        },
+        "n5.0": {
+          "node": "node-3",
+          "name": "influencedBy",
+          "type": "~ParameterInfluenceSignal",
+          "direction": ""
+        }
+      },
+      "endpoints": {
+        "edge-0": {
+          "fromPort": "n1.0",
+          "toPort": "n3.0"
+        },
+        "edge-1": {
+          "fromPort": "n3.1",
+          "toPort": "n5.0"
+        }
+      },
+      "projection": {
+        "presentation": "structure",
+        "lost": [
+          "nested visual containment; engine parent bindings remain in metadata",
+          "port glyphs and native anchors; port identities and edge endpoints remain in metadata"
+        ],
+        "counts": {
+          "selectedElements": 7,
+          "drawnNodes": 4,
+          "listedPorts": 4,
+          "relationships": 2
+        }
+      },
+      "engine": {
+        "name": "OpenSysML",
+        "version": "v0.10.1",
+        "binarySHA256": "1469eb7516a439fc372bc99812bf8bb5b4d2fb1b7279af29b2f055d6edbd1134",
+        "transport": "stdio JSON-RPC (upstream evaluation prototype)",
+        "standardLibrary": "embedded in the selected executable",
+        "modelHash": "3d4185ba758d50594ba8db3d7023332084f06c445ab70edf2cf0d8dbcd548695"
+      }
+    }
+  }
+}

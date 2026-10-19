@@ -1,0 +1,257 @@
+{
+  "formatVersion": "0.1",
+  "id": "view-a1f07202e9ca",
+  "title": "NativeViews::analyses",
+  "notation": "source-declarations",
+  "sources": [
+    {
+      "id": "source-0",
+      "uri": "experiment.sysml",
+      "revision": "sha256:9d6707c94f07c373267621a49808d3595fe4da69f9172a5fdcc548ac874dae77"
+    },
+    {
+      "id": "source-1",
+      "uri": "structure.sysml",
+      "revision": "sha256:e4c89904cf64d284a8e99c7e2dc50e880480f1b22162efc799830ea14add6511"
+    },
+    {
+      "id": "source-2",
+      "uri": "types.sysml",
+      "revision": "sha256:b14f23a2ad2b0ba38c9a13fba46a89fde70eda06e7d1b808b4dc95c596fd359c"
+    },
+    {
+      "id": "source-3",
+      "uri": "views.sysml",
+      "revision": "sha256:d7c4daa56b5146ab98bc6c64d5b4c342917a1e7b198ea948d89f585272469492"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "node-0",
+      "label": "analysis def NativeExperiment::Spectrum",
+      "symbol": "source.element",
+      "bounds": [
+        40.0,
+        40,
+        352,
+        144
+      ],
+      "compartments": [
+        {
+          "name": "source declarations",
+          "lines": [
+            "subject network : Transformer;",
+            "in attribute checkpointURI : String;",
+            "out attribute observationURI : String;"
+          ]
+        }
+      ],
+      "modelRef": {
+        "source": "source-0",
+        "element": "span:14:5:18:6"
+      }
+    },
+    {
+      "id": "node-1",
+      "label": "analysis def NativeExperiment::Mechanism",
+      "symbol": "source.element",
+      "bounds": [
+        512.0,
+        40,
+        360,
+        144
+      ],
+      "compartments": [
+        {
+          "name": "source declarations",
+          "lines": [
+            "subject network : Transformer;",
+            "in attribute checkpointURI : String;",
+            "out attribute observationURI : String;"
+          ]
+        }
+      ],
+      "modelRef": {
+        "source": "source-0",
+        "element": "span:19:5:23:6"
+      }
+    },
+    {
+      "id": "node-2",
+      "label": "analysis def NativeExperiment::Ablation",
+      "symbol": "source.element",
+      "bounds": [
+        992.0,
+        40,
+        352,
+        144
+      ],
+      "compartments": [
+        {
+          "name": "source declarations",
+          "lines": [
+            "subject network : Transformer;",
+            "in attribute checkpointURI : String;",
+            "out attribute observationURI : String;"
+          ]
+        }
+      ],
+      "modelRef": {
+        "source": "source-0",
+        "element": "span:24:5:28:6"
+      }
+    }
+  ],
+  "edges": [],
+  "extensions": {
+    "mbse-diagrams.native-view": {
+      "view": "NativeViews::analyses",
+      "kind": "tree",
+      "stated": "render asTreeDiagram",
+      "elements": {
+        "n0": {
+          "modelRef": {
+            "source": "source-0",
+            "element": "span:14:5:18:6"
+          },
+          "kind": "analysis def",
+          "name": "NativeExperiment::Spectrum",
+          "parent": "",
+          "presentation": "node-0"
+        },
+        "n1": {
+          "modelRef": {
+            "source": "source-0",
+            "element": "span:15:9:15:39"
+          },
+          "kind": "subject",
+          "name": "network",
+          "parent": "n0",
+          "type": "Transformer"
+        },
+        "n2": {
+          "modelRef": {
+            "source": "source-0",
+            "element": "span:16:9:16:45"
+          },
+          "kind": "attribute",
+          "name": "checkpointURI",
+          "parent": "n0",
+          "type": "String"
+        },
+        "n3": {
+          "modelRef": {
+            "source": "source-0",
+            "element": "span:17:9:17:47"
+          },
+          "kind": "attribute",
+          "name": "observationURI",
+          "parent": "n0",
+          "type": "String"
+        },
+        "n4": {
+          "modelRef": {
+            "source": "source-0",
+            "element": "span:19:5:23:6"
+          },
+          "kind": "analysis def",
+          "name": "NativeExperiment::Mechanism",
+          "parent": "",
+          "presentation": "node-1"
+        },
+        "n5": {
+          "modelRef": {
+            "source": "source-0",
+            "element": "span:20:9:20:39"
+          },
+          "kind": "subject",
+          "name": "network",
+          "parent": "n4",
+          "type": "Transformer"
+        },
+        "n6": {
+          "modelRef": {
+            "source": "source-0",
+            "element": "span:21:9:21:45"
+          },
+          "kind": "attribute",
+          "name": "checkpointURI",
+          "parent": "n4",
+          "type": "String"
+        },
+        "n7": {
+          "modelRef": {
+            "source": "source-0",
+            "element": "span:22:9:22:47"
+          },
+          "kind": "attribute",
+          "name": "observationURI",
+          "parent": "n4",
+          "type": "String"
+        },
+        "n8": {
+          "modelRef": {
+            "source": "source-0",
+            "element": "span:24:5:28:6"
+          },
+          "kind": "analysis def",
+          "name": "NativeExperiment::Ablation",
+          "parent": "",
+          "presentation": "node-2"
+        },
+        "n9": {
+          "modelRef": {
+            "source": "source-0",
+            "element": "span:25:9:25:39"
+          },
+          "kind": "subject",
+          "name": "network",
+          "parent": "n8",
+          "type": "Transformer"
+        },
+        "n10": {
+          "modelRef": {
+            "source": "source-0",
+            "element": "span:26:9:26:45"
+          },
+          "kind": "attribute",
+          "name": "checkpointURI",
+          "parent": "n8",
+          "type": "String"
+        },
+        "n11": {
+          "modelRef": {
+            "source": "source-0",
+            "element": "span:27:9:27:47"
+          },
+          "kind": "attribute",
+          "name": "observationURI",
+          "parent": "n8",
+          "type": "String"
+        }
+      },
+      "ports": {},
+      "endpoints": {},
+      "projection": {
+        "presentation": "declarations",
+        "lost": [
+          "nested visual containment; engine parent bindings remain in metadata"
+        ],
+        "counts": {
+          "selectedElements": 12,
+          "drawnNodes": 3,
+          "listedPorts": 0,
+          "relationships": 0
+        }
+      },
+      "engine": {
+        "name": "OpenSysML",
+        "version": "v0.10.1",
+        "binarySHA256": "1469eb7516a439fc372bc99812bf8bb5b4d2fb1b7279af29b2f055d6edbd1134",
+        "transport": "stdio JSON-RPC (upstream evaluation prototype)",
+        "standardLibrary": "embedded in the selected executable",
+        "modelHash": "ae4e4e4659e72f784d17beca86aba0a054cc3f349954176f105b9a4794414088"
+      }
+    }
+  }
+}

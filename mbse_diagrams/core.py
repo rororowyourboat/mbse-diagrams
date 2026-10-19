@@ -11,7 +11,7 @@ import zlib
 
 SYMBOLS = {"sysml.part-definition": ("part def", 0), "sysml.item-definition": ("item def", 0),
            "sysml.part-usage": ("part", 12), "sysml.item-usage": ("item", 12),
-           "uml.class": ("", 0)}
+           "uml.class": ("", 0), "source.element": ("", 0)}
 KINDS = {"specialization", "composition", "connection", "association", "dependency"}
 
 
@@ -40,7 +40,7 @@ def validate(d):
     require(d["formatVersion"] == "0.1", "unsupported formatVersion")
     require(isinstance(d["id"], str) and re.fullmatch(r"[A-Za-z][\w-]*", d["id"]), "invalid diagram id")
     require(isinstance(d["title"], str), "title must be text")
-    require(d["notation"] in ("sysml-2.0-structural", "uml-2.5.1-class"), "unsupported notation profile")
+    require(d["notation"] in ("sysml-2.0-structural", "uml-2.5.1-class", "source-declarations"), "unsupported notation profile")
     for key in ("sources", "nodes", "edges"):
         require(isinstance(d[key], list), f"{key}: expected array")
     require(isinstance(d.get("extensions", {}), dict), "extensions must be an object")
@@ -66,6 +66,7 @@ def validate(d):
         fields(n, "id label symbol bounds compartments modelRef".split(), "id label symbol bounds".split(), "node")
         common(n)
         require(n["symbol"] in SYMBOLS, "unsupported symbol")
+        require((n["symbol"] == 'source.element') == (d["notation"] == 'source-declarations'), "source card/profile mismatch")
         require(n["symbol"].startswith("sysml.") == d["notation"].startswith("sysml"), "symbol/profile mismatch")
         b = n["bounds"]
         require(isinstance(b, list) and len(b) == 4 and all(number(v) for v in b), "invalid bounds")
@@ -82,6 +83,8 @@ def validate(d):
         node_symbols[n['id']]=n['symbol']
     require(not ({n['id']+'--compartment-'+str(i) for n in d['nodes'] for i,_ in enumerate(n.get('compartments',[]))} & ids), 'presentation ID conflicts with generated compartment ID')
     allowed_kinds = {"specialization", "composition", "connection"} if d["notation"].startswith("sysml") else KINDS - {"connection"}
+    if d['notation'] == 'source-declarations':
+        allowed_kinds = set()
     for e in d["edges"]:
         fields(e, "id label kind source target points modelRef".split(), "id label kind source target points".split(), "edge")
         common(e)
@@ -102,6 +105,7 @@ def svg(d):
     esc = html.escape
     prefix = d["id"] + "-"
     width = max([n["bounds"][0] + n["bounds"][2] for n in d["nodes"]] + [p[0] for e in d["edges"] for p in e["points"]] + [200]) + 40
+    width = max([width] + [e['points'][len(e['points']) // 2][0] + len(e['label']) * 4 + 12 for e in d['edges']])
     height = max([n["bounds"][1] + n["bounds"][3] for n in d["nodes"]] + [p[1] for e in d["edges"] for p in e["points"]] + [100]) + 40
     out = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" role="img" aria-labelledby="{prefix}title {prefix}desc">',
            f'<title id="{prefix}title">{esc(d["title"])}</title><desc id="{prefix}desc">{len(d["nodes"])} elements, {len(d["edges"])} relationships. Profile {esc(d["notation"])}.</desc>',
@@ -111,7 +115,7 @@ def svg(d):
         ("triangle", '<path d="M0 0 L10 5 L0 10 Z" fill="white"/>', 10),
         ("diamond", '<path d="M0 5 L7 0 L14 5 L7 10 Z" fill="#26364a"/>', 0)]:
         out.append(f'<marker id="{prefix}{name}" viewBox="-1 -1 16 12" refX="{ref}" refY="5" markerWidth="16" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto-start-reverse" stroke="#26364a" stroke-width="1.5">{shape}</marker>')
-    out += ['</defs>', '<rect width="100%" height="100%" fill="#f8fafc"/>', '<g font-family="Arial, sans-serif" font-size="14" fill="#17263a">']
+    out += ['</defs>', '<rect width="100%" height="100%" fill="#f8fafc"/>', '<g font-family="Arial, sans-serif" font-size="14" fill="#17263a" xml:space="preserve">']
     for e in d["edges"]:
         marker = "triangle" if e["kind"] == "specialization" else "open" if e["kind"] in ("connection", "dependency") else None
         attrs = f' marker-end="url(#{prefix}{marker})"' if marker else ""
@@ -120,7 +124,7 @@ def svg(d):
         if e["kind"] == "dependency":
             attrs += ' stroke-dasharray="6 4"'
         points = " ".join(f"{x},{y}" for x,y in e["points"])
-        out.append(f'<g id="{prefix}{e["id"]}"><title>{esc(e["kind"] + ": " + e["label"])}</title><polyline points="{points}" fill="none" stroke="#26364a" stroke-width="1.5"{attrs}/>')
+        out.append(f'<g id="{prefix}{e["id"]}" data-model-ref="{esc(json.dumps(e.get("modelRef")), quote=True)}"><title>{esc(e["kind"] + ": " + e["label"])}</title><polyline points="{points}" fill="none" stroke="#26364a" stroke-width="1.5"{attrs}/>')
         x,y = e["points"][len(e["points"]) // 2]
         out.append(f'<text x="{x}" y="{y-9}" text-anchor="middle" paint-order="stroke" stroke="#f8fafc" stroke-width="5" stroke-linejoin="round">{esc(e["label"])}</text></g>')
     for n in d["nodes"]:
@@ -144,10 +148,42 @@ def svg(d):
 def viewer(d):
     image = svg(d)
     title = html.escape(d["title"])
+    native = d.get('extensions', {}).get('mbse-diagrams.native-view')
+    scope = ''
+    if native:
+        message = ('Source declaration cards. Displayed declarations are source text, not evaluated results.'
+                   if d['notation'] == 'source-declarations' else
+                   'Flat native view projection. Ports are listed; nested shapes and port glyphs are not drawn.')
+        scope = '<p style="margin:0;padding:0 16px 16px;color:#526175">' + message + '</p>'
     return f'''<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{title}</title>
 <style>body{{margin:0;background:#f8fafc;color:#17263a;font:16px Arial}}header{{padding:16px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}}h1{{font-size:20px;margin:0;margin-right:auto}}button{{padding:8px 14px}}main{{overflow:auto;padding:20px}}svg{{width:100%;min-width:600px}}#detail{{padding:16px;white-space:pre-wrap}}[data-model-ref]{{cursor:pointer}}</style>
-<header><h1>{title}</h1><button id="out" aria-label="Zoom out">−</button><button id="fit">Fit</button><button id="in" aria-label="Zoom in">+</button><button id="download">Download SVG</button></header><main>{image}</main><aside id="detail" aria-live="polite">Select an element to inspect its model reference.</aside>
-<script>const svg=document.querySelector('svg');let zoom=100;function scale(){{svg.style.width=zoom+'%';}}document.querySelector('#in').onclick=()=>{{zoom=Math.min(400,zoom+25);scale()}};document.querySelector('#out').onclick=()=>{{zoom=Math.max(25,zoom-25);scale()}};document.querySelector('#fit').onclick=()=>{{zoom=100;scale()}};document.querySelectorAll('[data-model-ref]').forEach(n=>{{n.onclick=()=>document.querySelector('#detail').textContent=n.dataset.modelRef}});document.querySelector('#download').onclick=()=>{{const u=URL.createObjectURL(new Blob([new XMLSerializer().serializeToString(svg)],{{type:'image/svg+xml'}}));const a=document.createElement('a');a.href=u;a.download='diagram.svg';a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)}};</script></html>'''
+<header><h1>{title}</h1><button id="out" aria-label="Zoom out">−</button><button id="fit">Fit</button><button id="in" aria-label="Zoom in">+</button><button id="download">Download SVG</button></header>{scope}<main>{image}</main><aside id="detail" aria-live="polite">Select an element or connection to inspect its source reference.</aside>
+<script>
+const svg=document.querySelector('svg');
+const diagram=JSON.parse(svg.querySelector('metadata').textContent);
+let zoom=100;
+function scale(){{svg.style.width=zoom+'%';svg.style.maxWidth=(svg.viewBox.baseVal.width*zoom/100)+'px';}}
+scale();
+document.querySelector('#in').onclick=()=>{{zoom=Math.min(400,zoom+25);scale()}};
+document.querySelector('#out').onclick=()=>{{zoom=Math.max(25,zoom-25);scale()}};
+document.querySelector('#fit').onclick=()=>{{zoom=100;scale()}};
+document.querySelectorAll('[data-model-ref]').forEach(n=>{{n.onclick=()=>{{
+    const ref=JSON.parse(n.dataset.modelRef);
+    const origin=ref && diagram.sources.find(s=>s.id===ref.source);
+    const detail=ref ? {{...ref,...(origin ? {{source:origin.uri,revision:origin.revision}} : {{}})}} : {{modelRef:null}};
+    const native=diagram.extensions && diagram.extensions['mbse-diagrams.native-view'];
+    const id=n.id.slice(diagram.id.length+1);
+    if(native && native.endpoints[id]){{
+        detail.ports=Object.fromEntries(Object.entries(native.endpoints[id]).map(([k,v])=>[k,native.ports[v]]));
+    }}
+    document.querySelector('#detail').textContent=JSON.stringify(detail,null,2);
+}}}});
+document.querySelector('#download').onclick=()=>{{
+    const u=URL.createObjectURL(new Blob([new XMLSerializer().serializeToString(svg)],{{type:'image/svg+xml'}}));
+    const a=document.createElement('a');a.href=u;a.download='diagram.svg';a.click();
+    setTimeout(()=>URL.revokeObjectURL(u),1000);
+}};
+</script></html>'''
 
 
 def drawio(d):
@@ -286,4 +322,6 @@ def mermaid(d):
         out.append(f'  {e["source"]} -->|"{label(e["kind"]+": "+e["label"])}"| {e["target"]}')
     report={'preserved':['node labels','edge endpoints','relationship kinds as text'], 'normalized':['all relationships displayed as flowchart arrows'],
             'unsupported':[], 'lost':['model references','notation glyphs','compartments','layout','editable presentation IDs for edges'], 'scope':'explanatory flowchart export; not formal SysML/UML interchange'}
+    if 'mbse-diagrams.native-view' in d.get('extensions', {}):
+        report['lost'].append('native view, parent and port endpoint bindings')
     return '\n'.join(out)+'\n',report

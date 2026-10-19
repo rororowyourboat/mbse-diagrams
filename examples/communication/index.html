@@ -9,10 +9,10 @@
 <marker id="communication-diamond" viewBox="-1 -1 16 12" refX="0" refY="5" markerWidth="16" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto-start-reverse" stroke="#26364a" stroke-width="1.5"><path d="M0 5 L7 0 L14 5 L7 10 Z" fill="#26364a"/></marker>
 </defs>
 <rect width="100%" height="100%" fill="#f8fafc"/>
-<g font-family="Arial, sans-serif" font-size="14" fill="#17263a">
-<g id="communication-sender-specialization"><title>specialization: </title><polyline points="160,230 160,170 460,170 460,120" fill="none" stroke="#26364a" stroke-width="1.5" marker-end="url(#communication-triangle)"/>
+<g font-family="Arial, sans-serif" font-size="14" fill="#17263a" xml:space="preserve">
+<g id="communication-sender-specialization" data-model-ref="{&quot;source&quot;: &quot;model&quot;, &quot;element&quot;: &quot;CommunicationExample::Sender::specialization&quot;}"><title>specialization: </title><polyline points="160,230 160,170 460,170 460,120" fill="none" stroke="#26364a" stroke-width="1.5" marker-end="url(#communication-triangle)"/>
 <text x="460" y="161" text-anchor="middle" paint-order="stroke" stroke="#f8fafc" stroke-width="5" stroke-linejoin="round"></text></g>
-<g id="communication-receiver-specialization"><title>specialization: </title><polyline points="760,230 760,170 460,170 460,120" fill="none" stroke="#26364a" stroke-width="1.5" marker-end="url(#communication-triangle)"/>
+<g id="communication-receiver-specialization" data-model-ref="{&quot;source&quot;: &quot;model&quot;, &quot;element&quot;: &quot;CommunicationExample::Receiver::specialization&quot;}"><title>specialization: </title><polyline points="760,230 760,170 460,170 460,120" fill="none" stroke="#26364a" stroke-width="1.5" marker-end="url(#communication-triangle)"/>
 <text x="460" y="161" text-anchor="middle" paint-order="stroke" stroke="#f8fafc" stroke-width="5" stroke-linejoin="round"></text></g>
 <g id="communication-Participant" data-model-ref="{&quot;source&quot;: &quot;model&quot;, &quot;element&quot;: &quot;CommunicationExample::Participant&quot;}"><title>{&quot;source&quot;: &quot;model&quot;, &quot;element&quot;: &quot;CommunicationExample::Participant&quot;}</title><rect x="340" y="40" width="240" height="80" rx="0" fill="white" stroke="#26364a" stroke-width="1.5"/>
 <text x="460.0" y="60" text-anchor="middle">«part def»</text>
@@ -38,5 +38,30 @@
 <text x="352" y="516">channel : Channel</text>
 <text x="352" y="536">receiver : Receiver</text>
 </g>
-</g></svg></main><aside id="detail" aria-live="polite">Select an element to inspect its model reference.</aside>
-<script>const svg=document.querySelector('svg');let zoom=100;function scale(){svg.style.width=zoom+'%';}document.querySelector('#in').onclick=()=>{zoom=Math.min(400,zoom+25);scale()};document.querySelector('#out').onclick=()=>{zoom=Math.max(25,zoom-25);scale()};document.querySelector('#fit').onclick=()=>{zoom=100;scale()};document.querySelectorAll('[data-model-ref]').forEach(n=>{n.onclick=()=>document.querySelector('#detail').textContent=n.dataset.modelRef});document.querySelector('#download').onclick=()=>{const u=URL.createObjectURL(new Blob([new XMLSerializer().serializeToString(svg)],{type:'image/svg+xml'}));const a=document.createElement('a');a.href=u;a.download='diagram.svg';a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)};</script></html>
+</g></svg></main><aside id="detail" aria-live="polite">Select an element or connection to inspect its source reference.</aside>
+<script>
+const svg=document.querySelector('svg');
+const diagram=JSON.parse(svg.querySelector('metadata').textContent);
+let zoom=100;
+function scale(){svg.style.width=zoom+'%';svg.style.maxWidth=(svg.viewBox.baseVal.width*zoom/100)+'px';}
+scale();
+document.querySelector('#in').onclick=()=>{zoom=Math.min(400,zoom+25);scale()};
+document.querySelector('#out').onclick=()=>{zoom=Math.max(25,zoom-25);scale()};
+document.querySelector('#fit').onclick=()=>{zoom=100;scale()};
+document.querySelectorAll('[data-model-ref]').forEach(n=>{n.onclick=()=>{
+    const ref=JSON.parse(n.dataset.modelRef);
+    const origin=ref && diagram.sources.find(s=>s.id===ref.source);
+    const detail=ref ? {...ref,...(origin ? {source:origin.uri,revision:origin.revision} : {})} : {modelRef:null};
+    const native=diagram.extensions && diagram.extensions['mbse-diagrams.native-view'];
+    const id=n.id.slice(diagram.id.length+1);
+    if(native && native.endpoints[id]){
+        detail.ports=Object.fromEntries(Object.entries(native.endpoints[id]).map(([k,v])=>[k,native.ports[v]]));
+    }
+    document.querySelector('#detail').textContent=JSON.stringify(detail,null,2);
+}});
+document.querySelector('#download').onclick=()=>{
+    const u=URL.createObjectURL(new Blob([new XMLSerializer().serializeToString(svg)],{type:'image/svg+xml'}));
+    const a=document.createElement('a');a.href=u;a.download='diagram.svg';a.click();
+    setTimeout(()=>URL.revokeObjectURL(u),1000);
+};
+</script></html>

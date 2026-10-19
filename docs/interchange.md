@@ -16,6 +16,8 @@ Geometry uses diagram coordinates in SVG user units with x increasing rightward 
 
 References must resolve within the document. Nesting and ports are deferred and rejected rather than ignored. IDs must be unique across nodes and edges. Unknown notation or relationship kinds must yield diagnostics rather than a guessed glyph.
 
+The `source-declarations` profile uses only `source.element` cards and no relationship edges. It displays selected source declarations rather than claiming formal graphical glyphs. The [native view adapter](native-views.md) can also explicitly flatten engine-selected parents and ports into the existing structural profile: its namespaced extension retains source and endpoint bindings, while its receipt reports the lost nested/port notation. Neither operation adds native ports or nesting fields to JSON 0.1.
+
 Adapters must report preserved, normalized, unsupported and lost fields. Unbound nodes are allowed in JSON; new editor-created cells are rejected until mapped explicitly. Deleting a presentation does not delete its source model element.
 
 The first version supports a documented subset of draw.io. Arbitrary draw.io diagrams are outside the initial round-trip promise.
