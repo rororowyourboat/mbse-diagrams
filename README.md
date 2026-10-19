@@ -2,7 +2,7 @@
 
 Reusable engineering diagram notation, editable diagram interchange, and rendering tools.
 
-Status: experimental version 0.1. Structural SVG/HTML rendering, bounded SysML v2 extraction, UML class-view notation, draw.io interchange and Mermaid flowchart export are implemented. Repository: [rororowyourboat/mbse-diagrams](https://github.com/rororowyourboat/mbse-diagrams).
+Status: experimental version 0.1. Structural SVG/HTML rendering, bounded SysML v2 extraction, UML class-view notation, draw.io interchange and Mermaid flowchart export are implemented. An experimental D3 viewer package is available under [`packages/d3-viewer`](packages/d3-viewer/) for interactive multi-view exploration. Repository: [rororowyourboat/mbse-diagrams](https://github.com/rororowyourboat/mbse-diagrams).
 
 Native SysML v2 views can also be resolved across multiple files through an explicitly selected OpenSysML executable. The adapter exports a flat structural view or source declaration cards, with source hashes, port endpoint bindings and a projection receipt. The `views` command renders several model-authored views from one parse. See [native view usage and limits](docs/native-views.md), [the transformer example](examples/native-views/index.html), and the [multi-view gallery](examples/native-views/multiview/index.html) with structural, role/domain, parameter-influence and hypothesis-traceability views.
 
@@ -18,7 +18,7 @@ Start with SysML v2; keep other engineering notations as future extensions. This
 
 1. Notation catalog: SVG assets plus machine-readable notation metadata.
 2. Experimental diagram JSON: model references, displayed elements, relationships and geometry.
-3. Tools: SVG renderer and bidirectional draw.io adapter.
+3. Tools: SVG renderer, bidirectional draw.io adapter, and an interactive browser viewer package.
 
 The engineering model remains authoritative for semantics. Diagram edits change presentation; they do not silently modify the source model.
 
@@ -35,6 +35,8 @@ See [design](docs/design.md), [interchange contract](docs/interchange.md), and [
 Run from the repository root with Python 3.10 or later; no package installation or third-party runtime dependencies are required. See [usage](docs/usage.md) and the explicit [support matrix](docs/support.md).
 
 Try [the communication viewer](examples/communication/index.html) or [the UML viewer](examples/uml/index.html), or open their `.drawio` files in draw.io.
+
+To try the D3 viewer, follow [`packages/d3-viewer/README.md`](packages/d3-viewer/README.md). It consumes the existing JSON diagram contract and keeps per-view layout and visibility state outside the SysML model.
 
 Run `python3 scripts/check_docs.py`, `python3 -m unittest discover -s tests -v`, and `git diff --check`. GitHub Actions also checks reproducible example exports.
 

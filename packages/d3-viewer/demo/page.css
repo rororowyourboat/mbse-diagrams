@@ -1,0 +1,1 @@
+body{margin:0;background:#f7f7f4;color:#1b1b1a;font:14px/1.5 system-ui,sans-serif}main{max-width:1500px;margin:0 auto;padding:20px}h1{font-family:Georgia,serif;font-size:32px;font-weight:400;margin:0}main>p{color:#73746f;margin:6px 0 16px}#viewer{height:min(78vh,900px);min-height:620px}@media(max-width:680px){main{padding:12px}#viewer{height:auto;min-height:800px}}

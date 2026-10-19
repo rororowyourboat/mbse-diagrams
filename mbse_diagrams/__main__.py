@@ -11,10 +11,11 @@ from .diagramatic import layout
 from .core import validate, svg, viewer, drawio, import_drawio, mermaid
 
 
-def main():
-    if len(sys.argv) > 1 and sys.argv[1] in ('view', 'views'):
+def main(argv=None):
+    argv = sys.argv[1:] if argv is None else list(argv)
+    if argv and argv[0] in ('view', 'views'):
         from .cli_views import main as view_main
-        return view_main(sys.argv[1:])
+        return view_main(argv[1:])
     parser = argparse.ArgumentParser(description="Structural diagram rendering and interchange")
     parser.add_argument('command', choices=['validate','svg','html','drawio','import-drawio','mermaid','sysml','layout'])
     parser.add_argument('input', type=Path)
@@ -23,7 +24,7 @@ def main():
     parser.add_argument('--diagramatic-path',type=Path,help='Trusted source checkout at the tested diagramatic commit')
     parser.add_argument('--direction',choices=['TB','BT','LR','RL'],default='TB')
     parser.add_argument('--layer',action='append',default=[],metavar='NODE=LAYER')
-    args=parser.parse_args()
+    args=parser.parse_args(argv)
     try:
         text=args.input.read_text()
         if args.command in ('import-drawio','mermaid','sysml','layout') and not args.report:
