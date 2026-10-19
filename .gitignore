@@ -3,6 +3,7 @@
 __pycache__/
 *.py[cod]
 node_modules/
+packages/d3-viewer/demo/dist/
 .DS_Store
 # Secrets and local configuration
 .env
