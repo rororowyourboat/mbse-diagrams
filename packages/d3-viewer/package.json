@@ -4,7 +4,10 @@
   "private": true,
   "type": "module",
   "description": "Interactive multi-view browser viewer for MBSE Diagrams JSON",
-  "exports": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./style.css": "./src/viewer.css"
+  },
   "scripts": {
     "dev": "vite --config vite.config.js",
     "build": "vite build --config vite.config.js",

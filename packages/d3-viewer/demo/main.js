@@ -1,6 +1,7 @@
 import architecture from '../../../examples/native-views/multiview/NativeViews-architecture.json';
 import byRole from '../../../examples/native-views/multiview/ResearchPerspectives-byRole.json';
 import { mountSysmlViewer } from '../src/index.js';
+import '../src/viewer.css';
 import './page.css';
 
 const viewer = mountSysmlViewer({

@@ -21,6 +21,7 @@ Install the package in a JavaScript host and provide an HTML mount point plus on
 
 ```js
 import { mountSysmlViewer } from '@mbse-diagrams/d3-viewer';
+import '@mbse-diagrams/d3-viewer/style.css';
 
 const viewer = mountSysmlViewer({
   element: document.querySelector('#viewer'),

@@ -1,8 +1,12 @@
 import * as d3 from 'd3';
-import './viewer.css';
 import { resolvedModelRef } from './model-ref.js';
 
 const SYMBOL_KEYWORDS = {
+  'sysml.package': 'package',
+  'sysml.requirement-definition': 'requirement def',
+  'sysml.requirement-usage': 'requirement',
+  'sysml.action-definition': 'action def',
+  'sysml.action-usage': 'action',
   'sysml.part-definition': 'part def',
   'sysml.item-definition': 'item def',
   'sysml.part-usage': 'part',
